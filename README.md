@@ -23,7 +23,7 @@
 | info                | text        | null: true                     |
 | writer              | string      | null: false                    |
 | composer            | string      | null: false                    | 
-| lyrics              | text        | null: false                    |
+| lyric               | text        | null: false                    |
 | user                | references  | null: false, foreign_key: true |
 ## Association
 * belongs_to :user
