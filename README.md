@@ -8,7 +8,7 @@
 | info                | text        | null: true                |
 | city                | integer     | null: false               |
 | genre               | integer     | null: false               |
-| e-mail              | string      | null: true                |
+| e-mail              | string      | null: false               |
 | website             | string      | null: true                |
 | twitter             | string      | null: true                |
 | instagram           | string      | null: true                |
