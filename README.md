@@ -2,7 +2,7 @@
 ## artistsテーブル
 | Column              | Type        | Options                   |
 |---------------------|-------------|---------------------------|
-| ID                  | string      | null: false, unique: true |
+| artist_id           | string      | null: false, unique: true |
 | name                | string      | null: false               |
 | member              | string      | null: false               |
 | info                | text        | null: true                |
