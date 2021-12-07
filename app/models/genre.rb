@@ -13,11 +13,10 @@ class Genre < ActiveHash::Base
     { id: 11, name: 'ヒップホップ・ラップ' },
     { id: 12, name: 'ジャズ' },
     { id: 13, name: 'R&B' },
-    { id: 14, name: 'レゲエ' },
+    { id: 14, name: 'レゲエ' }
 
   ]
 
   include ActiveHash::Associations
   has_many :artists
-
-  end
+end
