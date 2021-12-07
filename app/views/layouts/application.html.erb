@@ -17,18 +17,25 @@
           <div class="nav__left">
             <%= link_to image_tag("logo1.png", class: :logo), root_path %>
           </div>
+          <div class="nav__center">
+            <%= link_to "DIG ARTISTについて", root_path, class: :navigation__btn %>
+            <%= link_to "お知らせ", root_path, class: :navigation__btn %>
+            <%= link_to "ランキング", root_path, class: :navigation__btn %>
+          </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if artist_signed_in? %>
             <div class="nav__right">
+              <%= link_to image_tag("searchアイコン.png", class: :search__btn), root_path %>
               <%= link_to "ログアウト", destroy_artist_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "楽曲アップロード", root_path, class: :nav__btn %>
+              <%= link_to "楽曲アップロード", root_path, class: :song_up__btn %>
             </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
           <% else %>
             <div class="nav__right">
+              <%= link_to image_tag("searchアイコン.png", class: :search__btn), root_path %>
               <%= link_to "ログイン", new_artist_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", root_path, class: :nav__btn %>
+              <%= link_to "新規登録", new_artist_registration_path, class: :nav__btn %>
             </div>
           <% end %>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
