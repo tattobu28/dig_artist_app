@@ -9,6 +9,6 @@ class Artist < ApplicationRecord
   validates :artist_id, presence: true
   validates :name,      presence: true
   validates :member,    presence: true
-  validates :city_id,      presence: true, numericality: { other_than: 0, message: "can't be blank" }
-  validates :genre_id,     presence: true, numericality: { other_than: 1, message: "can't be blank" }
+  validates :city_id,      presence: true, numericality: { other_than: 0, message: "を入力してください" }
+  validates :genre_id,     presence: true, numericality: { other_than: 1, message: "を入力してください" }
 end

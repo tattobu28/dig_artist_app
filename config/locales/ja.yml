@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      artist:
+        image: 画像
+        email: メールアドレス
+        password: パスワード
+        artist_id: ID
+        name: アーティスト名
+        member: メンバー
+        city_id: 活動拠点
+        genre_id: ジャンル
