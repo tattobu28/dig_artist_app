@@ -1,45 +1,70 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">ユーザー新規登録</h2>
+      <h2 class="page-heading">アーティスト新規登録</h2>
 
         <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
         <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
         <%= form_with model: @artist, url: artist_registration_path, local: true do |f| %>
 
         <div class="field">
-          <%= f.label :hoge, "メールアドレス" %><br />
-          <%= f.email_field :hoge, id:"user_email", autofocus: true, autocomplete: "email" %>
+          <%= f.label :artist_id, "ID" %><br />
+          <%= f.text_field :artist_id, class: :form__text, id:"artist_artist_id", autofocus: true %>
         </div>
 
         <div class="field">
-          <%= f.label :hoge, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :hoge, id:"user_password", autocomplete: "new-password" %>
+          <%= f.label :name, "アーティスト名" %><br />
+          <%= f.text_field :name, class: :form__text, id:"artist_name" %>
         </div>
 
         <div class="field">
-          <%= f.label :hoge, "パスワード再入力" %><br />
+          <%= f.label :member, "メンバー" %><br />
+          <%= f.text_field :member, class: :form__text, id:"artist_member" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :info, "紹介文" %><br />
+          <%= f.text_area :info, class: :form__text, id:"artist_info" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :city, "活動拠点" %><br />
+          <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"field"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :genre, "ジャンル" %><br />
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"field"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"artist_email", autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :website, "Website" %><br />
+          <%= f.text_field :website, class: :form__text, id:"artist_website" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :twitter, "Twitter" %><br />
+          <%= f.text_field :twitter, id:"artist_twitter" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :instagram, "Instagram" %><br />
+          <%= f.text_field :instagram, id:"artist_instagram" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード確認" %><br />
           <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hoge, "ユーザー名" %><br />
-          <%= f.text_field :hoge, id:"user_name" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hoge, "プロフィール" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_profile" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hoge, "所属" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_occupation" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :hoge, "役職" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_position" %>
         </div>
 
         <div class="actions">

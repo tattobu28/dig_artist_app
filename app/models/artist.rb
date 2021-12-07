@@ -1,4 +1,8 @@
 class Artist < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :genre
+  belongs_to :city
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
