@@ -10,8 +10,8 @@ class DeviseCreateArtists < ActiveRecord::Migration[6.0]
       t.string  :encrypted_password, null: false, default: ""
       t.string  :member,             null: false
       t.text    :info,               null: true
-      t.integer :city,               null: false
-      t.integer :genre,              null: false
+      t.integer :city_id,            null: false
+      t.integer :genre_id,           null: false
       t.string  :website,            null: true
       t.string  :twitter,            null: true
       t.string  :instagram,          null: true

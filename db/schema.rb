@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_12_05_071857) do
     t.string "encrypted_password", default: "", null: false
     t.string "member", null: false
     t.text "info"
-    t.integer "city", null: false
-    t.integer "genre", null: false
+    t.integer "city_id", null: false
+    t.integer "genre_id", null: false
     t.string "website"
     t.string "twitter"
     t.string "instagram"

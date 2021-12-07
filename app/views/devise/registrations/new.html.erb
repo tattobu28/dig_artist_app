@@ -28,12 +28,12 @@
         </div>
 
         <div class="field">
-          <%= f.label :city, "活動拠点" %><br />
+          <%= f.label :city_id, "活動拠点" %><br />
           <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"field"}) %>
         </div>
 
         <div class="field">
-          <%= f.label :genre, "ジャンル" %><br />
+          <%= f.label :genre_id, "ジャンル" %><br />
           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"field"}) %>
         </div>
 
