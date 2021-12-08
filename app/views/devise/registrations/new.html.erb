@@ -1,70 +1,82 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">アーティスト新規登録</h2>
+      <h2 class="page-heading">アーティスト登録</h2>
         <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
         <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
-      <%= form_with model: @artist, url: artist_registration_path, local: true do |f| %>
+      <%= form_with model: @artist, url: artist_registration_path, class: 'registration-main', local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
 
         <div class="field">
-          <%= f.label :artist_id, "ID" %><br />
-          <%= f.text_field :artist_id, class: :form__text, id:"artist_artist_id", autofocus: true %>
+          <div class='form-text-wrap'>
+            <label class="form-text">ID</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :artist_id, class: :form__text, id:"artist_artist_id", autofocus: true, placeholder:" 例) artist12" %>
+          <p class='info__text'>※英字と数字の両方を含めて設定してください</p>
         </div>
 
         <div class="field">
-          <%= f.label :name, "アーティスト名" %><br />
-          <%= f.text_field :name, class: :form__text, id:"artist_name" %>
+          <%= f.label :name, "アーティスト名" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.text_field :name, class: :form__text, id:"artist_name", placeholder:" アーティスト名を入力してください" %>
         </div>
 
         <div class="field">
-          <%= f.label :member, "メンバー" %><br />
-          <%= f.text_field :member, class: :form__text, id:"artist_member" %>
+          <%= f.label :member, "メンバー" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.text_field :member, class: :form__text, id:"artist_member", placeholder:" 例) Vo/〇〇,Gt/〇〇" %>
         </div>
         
         <div class="field">
           <%= f.label :info, "紹介文" %><br />
-          <%= f.text_area :info, class: :form__text, id:"artist_info" %>
+          <%= f.text_area :info, class: :form__text, id:"artist_info", placeholder:" アーティストの紹介文を入力してください" %>
         </div>
 
         <div class="field">
-          <%= f.label :city_id, "活動拠点" %><br />
-          <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"field"}) %>
+          <%= f.label :city_id, "活動拠点" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.collection_select(:city_id, City.all, :id, :name, {}, {class:"form__text"}) %>
         </div>
 
         <div class="field">
-          <%= f.label :genre_id, "ジャンル" %><br />
-          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"field"}) %>
+          <%= f.label :genre_id, "ジャンル" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form__text"}) %>
         </div>
 
         <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"artist_email", autocomplete: "email" %>
+          <%= f.label :email, "メールアドレス" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.email_field :email, class: :form__text, id:"artist_email", autocomplete: "email", placeholder:" PC・携帯どちらでも可" %>
         </div>
 
         <div class="field">
           <%= f.label :website, "Website" %><br />
-          <%= f.text_field :website, class: :form__text, id:"artist_website" %>
+          <%= f.text_field :website, class: :form__text, id:"artist_website", placeholder:" ウェブサイトやYouTubeページのURLを入力してください" %>
         </div>
 
         <div class="field">
           <%= f.label :twitter, "Twitter" %><br />
-          <%= f.text_field :twitter, id:"artist_twitter" %>
+          <%= f.text_field :twitter, class: :form__text, id:"artist_twitter", placeholder:" Twitter" %>
         </div>
 
         <div class="field">
           <%= f.label :instagram, "Instagram" %><br />
-          <%= f.text_field :instagram, id:"artist_instagram" %>
+          <%= f.text_field :instagram, class: :form__text, id:"artist_instagram", placeholder:" Instagram" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+          <%= f.label :password, "パスワード" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.password_field :password, class: :form__text, id:"user_password", autocomplete: "new-password", placeholder:" 6文字以上の半角英数字"  %>
+          <p class='info__text'>※英字と数字の両方を含めて設定してください</p>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "パスワード確認" %><br />
-          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+          <%= f.label :password_confirmation, "パスワード確認" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.password_field :password_confirmation, class: :form__text, id:"user_password_confirmation", autocomplete: "new-password", placeholder:" 同じパスワードを入力してください"  %>
         </div>
 
         <div class="actions">
