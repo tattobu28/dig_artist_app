@@ -4,5 +4,6 @@ class Song < ApplicationRecord
 
   validates :title,         presence: true
   validates :composer,      presence: true
+  validates :image, presence: true
 
 end

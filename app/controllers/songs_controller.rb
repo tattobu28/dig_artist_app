@@ -10,7 +10,12 @@ class SongsController < ApplicationController
   end
 
   def create
-    Song.create(song_params)
+    @song = Song.new(song_params)
+    if @song.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destory
@@ -31,7 +36,7 @@ class SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:image, :title, :info, :writer, :composer, :lyric).merge(artist_id: current_user.id)
+    params.require(:song).permit(:image, :title, :info, :writer, :composer, :lyric).merge(artist_id: current_artist.id)
   end
 
   def set_song
