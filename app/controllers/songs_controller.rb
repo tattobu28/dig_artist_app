@@ -35,6 +35,7 @@ class SongsController < ApplicationController
   end
 
   private
+
   def song_params
     params.require(:song).permit(:image, :title, :info, :writer, :composer, :lyric).merge(artist_id: current_artist.id)
   end
@@ -42,5 +43,4 @@ class SongsController < ApplicationController
   def set_song
     @song = Song.find(params[:id])
   end
-
 end
