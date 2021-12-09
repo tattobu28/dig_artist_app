@@ -7,5 +7,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up,
                                       keys: [:artist_id, :name, :member, :info, :city_id, :genre_id, :website, :twitter,
                                              :instagram])
+    devise_parameter_sanitizer.permit(:account_update,
+                                      keys: [:artist_id, :name, :member, :info, :city_id, :genre_id, :website, :twitter,
+                                            :instagram])
   end
 end

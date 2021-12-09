@@ -1,5 +1,7 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:edit, :show, :update]
+  before_action :set_song, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_artist!, except: [:show, :index]
+
 
   def index
     @songs = Song.all
@@ -18,9 +20,9 @@ class SongsController < ApplicationController
     end
   end
 
-  def destory
-    song = Song.find(params[:id])
-    song.destory
+  def destroy
+    @song.destroy
+    redirect_to action: "index"
   end
 
   def edit

@@ -4,7 +4,7 @@
     <% if artist_signed_in? %>
       <div class="greeting">
         <p> Hello!
-        <%= link_to current_artist.name, root_path, class: :greeting__link %>
+        <%= link_to current_artist.name, "/artists/#{current_artist.id}", class: :greeting__link %>
         </p>
       </div>
     <% end %>

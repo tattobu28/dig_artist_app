@@ -1,4 +1,8 @@
 class ArtistsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+
+  def show
+    @artist = Artist.find(params[:id])
+    @songs = @artist.songs
+  end
 
 end
