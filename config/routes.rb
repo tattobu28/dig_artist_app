@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :artists
-  get 'artists/index'
-  root to: "artists#index"
-  resources :artists
+  get 'songs/index'
+  root to: "songs#index"
   resources :songs
 end
