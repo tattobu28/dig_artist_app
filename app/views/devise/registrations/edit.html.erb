@@ -6,6 +6,14 @@
         <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
       <%= form_with model: @artist, url: artist_registration_path, class: 'registration-main', local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
+  
+        <div class="field">
+          <div class='form-text-wrap'>
+            <label class="form-text">アーティスト写真</label>
+            <p class='info__text'>※現在の画像を変更したい場合のみクリックしてファイルをアップロード</p>
+          </div>
+            <%= f.file_field :image, id:"song_image" %>
+        </div>
 
         <div class="field">
           <div class='form-text-wrap'>

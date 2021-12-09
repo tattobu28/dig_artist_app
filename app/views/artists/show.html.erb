@@ -1,6 +1,9 @@
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
+      <div class="prototype__image">
+        <%= image_tag @artist.image, class: :song__img %>
+      </div>
       <h2 class="page-heading">
         <%= @artist.name%>
       </h2>

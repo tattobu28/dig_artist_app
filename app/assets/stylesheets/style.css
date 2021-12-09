@@ -344,11 +344,13 @@ a {
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
+  text-align: center;
 }
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
   width: 50%;
+  margin: 0 auto;
 }
 .table__col1{
   text-align: left;
