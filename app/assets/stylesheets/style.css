@@ -270,21 +270,33 @@ a {
   color: #999;
   text-align: center;
   text-decoration: underline;
+  margin-bottom: 20px;
+}
+.prototype__user:hover{
+  text-decoration: none;
 }
 .prototype__image{
-  width: 40%;
   margin: 0 auto;
-  padding: 16px 0;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
-.prototype__detail{
+.song__img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.song__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
 }
 .detail__title{
-  font-size: 20px;
   font-weight: bold;
+}
+.detail__lyric{
+  white-space: pre-wrap;
 }
 .prototype__manage{
   display: flex;
