@@ -3,7 +3,7 @@
 class Artists::RegistrationsController < Devise::RegistrationsController
   protected
 
-  def after_update_path_for(resource)
+  def after_update_path_for(_resource)
     artist_profile_path(current_artist)
   end
   # before_action :configure_sign_up_params, only: [:create]

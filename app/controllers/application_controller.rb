@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
                                              :instagram])
     devise_parameter_sanitizer.permit(:account_update,
                                       keys: [:image, :artist_id, :name, :member, :info, :city_id, :genre_id, :website, :twitter,
-                                            :instagram])
+                                             :instagram])
   end
 end
