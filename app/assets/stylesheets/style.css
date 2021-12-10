@@ -281,6 +281,9 @@ a {
   height: 250px;
   object-fit: cover;
 }
+.prototype__song{
+  text-align: center;
+}
 .song__img {
   width: 250px;
   height: 250px;

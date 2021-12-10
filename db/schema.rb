@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_12_08_134402) do
     t.string "composer", null: false
     t.text "lyric"
     t.bigint "artist_id", null: false
+    t.string "file"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"

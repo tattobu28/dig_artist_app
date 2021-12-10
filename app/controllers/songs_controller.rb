@@ -41,7 +41,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:image, :title, :info, :writer, :composer, :lyric).merge(artist_id: current_artist.id)
+    params.require(:song).permit(:file, :image, :title, :info, :writer, :composer, :lyric).merge(artist_id: current_artist.id)
   end
 
   def set_song

@@ -4,6 +4,13 @@
       <div class="prototype__image">
         <%= image_tag @song.image, class: :song__img %>
       </div>
+
+      <div class="prototype__song">
+        <audio src= "<%= "#{@song.file}" %>" controls="">
+          <a src="<%= "#{@song.file}" %>">ダウンロード</a>
+        </audio>
+      </div>
+
       <% if artist_signed_in? && current_artist.id == @song.artist_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_song_path(@song), class: :prototype__btn %>
@@ -29,9 +36,7 @@
         </div>
         <div class="song__detail">
           <p class="detail__title">歌詞</p>
-          <p class="detail__lyric">
-            <%= @song.lyric %>
-          </p>
+          <p class="detail__lyric"><%= @song.lyric %></p>
         </div>
       </div>
     </div>
