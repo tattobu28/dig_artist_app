@@ -130,6 +130,95 @@ a {
 .search__btn:hover{
   opacity: 0.5;
 }
+.artistSearchBox{
+  max-height: 682px;
+  display: block;
+  z-index: 5050;
+  position: fixed;
+  left: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  padding: 20px 0 60px;
+  top: 70px;
+  background-color: #fff;
+  box-shadow: 0px 4px 3.6px 0.4px rgb(0 0 0 / 10%);
+}
+.hidden{
+  display: none;
+}
+.artistSearchBox_inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.ttl_artistSearch{
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.artistSearch_keyword{
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  display: block;
+}
+.artistSearch_keyword p{
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .1em;
+  color: #333;
+  word-break: break-all;
+}
+.js-artistSearch{
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  height: 40px;
+  box-sizing: border-box;
+  margin-right: 124px;
+  width: 100%;
+  display: block;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.js-artistSearchButton{
+  background-color: #f2f2f2 !important;
+  border: 1px solid #ccc !important;
+  color: #333 !important;
+  cursor: pointer;
+  position: absolute;
+  top: 65px;
+  right: -124px;
+  width: 117px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.active::after{
+  content: "|";
+  margin: 0 1em;
+  font-size: 14px;
+}
+.artistSearch_select{
+  margin-top: 30px;
+}
+.artistSearch_tabs li{
+  display: inline-block
+}
+.artistSearch_tabs li span{
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;

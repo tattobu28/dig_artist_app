@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="search.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dig Artist</title>
     <%= csrf_meta_tags %>
@@ -39,6 +40,26 @@
             </div>
           <% end %>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
+          <div class="artistSearchBox hidden" id="pull-down">
+            <div class="artistSearchBox_inner">
+              <p class="ttl_artistSearch">アーティスト検索</p>
+              <div class="artistSearch_keyword">
+                <p>フリーワードで探す</p>
+                <form id="freewordSearch" action="">
+                  <input maxlength="30" type="text" name="searchKeyword" placeholder="アーティスト名を入力" class="js-artistSearch">
+                  <input tyoe="button" name="artistSearchBtn" value="Search" class="js-artistSearchButton" disabled>
+                </form>
+              </div>
+              <div class="artistSearch_select">
+                <ul class="artistSearch_tabs">
+                  <li class="active">
+                    <span class="artistSearch_genre">ジャンルから探す</span>
+                  </li>
+                  <li class>
+                  <span class="artistSearch_area">活動拠点から探す</span>
+                  </li>
+            </div>
+          </div>
         </div>
       </div>
     </header>
