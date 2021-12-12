@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :authenticate_artist!, except: [:show, :index]
 
   def index
-    @songs = Song.all
+    @songs = Song.order('id DESC').limit(4)
   end
 
   def new
@@ -11,7 +11,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+    @song = Song.new(song_params) 
     if @song.save
       redirect_to root_path
     else

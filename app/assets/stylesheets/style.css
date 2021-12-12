@@ -219,13 +219,20 @@ a {
   font-size: 30px;
   margin-bottom: 28px;
 }
+.newitem{
+  color: red;
+  font-size: 20px;
+  border-bottom: black solid 1px;
+  margin-bottom: 10px;
+}
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   min-height: calc(100vh - 161px);
 }
+
 .card {
   width: calc((100% - 50px) / 4);
   margin-bottom: 40px;
@@ -235,6 +242,10 @@ a {
   width: 250px;
   height: 250px;
   object-fit: cover;
+  transition: 0.5s;
+}
+.card__img:hover{
+  transform: scale(1.1, 1.1);
 }
 
 .card__title {
@@ -245,6 +256,9 @@ a {
   text-decoration: underline;
   color: #333333;
 }
+.card__title:hover{
+  opacity: 0.5;
+}
 .card__summary {
   font-size: 16px;
 }
@@ -253,6 +267,9 @@ a {
   font-size: 16px;
   color: #333333;
   text-decoration: none;
+}
+.card__user:hover{
+  opacity: 0.5;
 }
 
 /* 詳細ページ */
