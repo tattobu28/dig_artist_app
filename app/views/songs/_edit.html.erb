@@ -1,4 +1,5 @@
 <%= form_with model: @song, class: 'registration-main', local: true do |f|%>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <div class='form-text-wrap'>
       <label class="form-text">タイトル</label>
@@ -33,10 +34,18 @@
   <div class="field">
     <div class='form-text-wrap'>
       <label class="form-text">アルバムアートワーク</label>
-      <p class='info__text'>※現在の画像を変更したい場合のみクリックしてファイルをアップロード</p>
+      <p class='info__text'>※現在アップしている画像を変更したい場合のみクリックしてファイルをアップロード</p>
     </div>
       <%= f.file_field :image, id:"song_image" %>
   </div>
+
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">楽曲ファイル</label>
+      <span class="indispensable">必須</span>
+      <p class='info__text'>※現在アップしている曲を変更したい場合のみクリックしてファイルをアップロード</p>
+    </div>
+  <%= f.file_field :file , :size => 140 %>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>

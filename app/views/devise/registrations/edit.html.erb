@@ -93,7 +93,7 @@
         <div class="actions">
           <%= f.submit "変更する", class: :form__btn  %>
         </div>
-        <%= link_to "back", :back , class: :artist__btn%>
+        <%= link_to "戻る", 'javascript:history.back()', class: :artist__btn%>
       <% end %>
         <h6>アーティストを完全に削除する</h6>
         <%= button_to "削除する", registration_path(resource_name), data: { confirm: "完全に削除されますが、よろしいですか?" }, method: :delete, class: :artist__btn %>

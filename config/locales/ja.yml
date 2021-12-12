@@ -10,3 +10,8 @@ ja:
         member: メンバー
         city_id: 活動拠点
         genre_id: ジャンル
+      song:
+        title: タイトル
+        composer: 作曲者
+        image: アルバムアートワーク
+        file: 楽曲ファイル
