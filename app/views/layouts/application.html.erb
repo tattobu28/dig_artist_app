@@ -25,7 +25,7 @@
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if artist_signed_in? %>
             <div class="nav__right">
-              <%= link_to image_tag("searchアイコン.png", class: :search__btn), root_path %>
+              <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
               <%= link_to "ログアウト", destroy_artist_session_path, method: :delete, class: :nav__logout %>
               <%= link_to "楽曲アップロード", new_song_path, class: :song_up__btn %>
             </div>
@@ -33,7 +33,7 @@
           <%# ログインしていないときは以下を表示するようにしましょう %>
           <% else %>
             <div class="nav__right">
-              <%= link_to image_tag("searchアイコン.png", class: :search__btn), root_path %>
+              <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
               <%= link_to "ログイン", new_artist_session_path, class: :nav__btn %>
               <%= link_to "新規登録", new_artist_registration_path, class: :nav__btn %>
             </div>
