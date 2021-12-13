@@ -243,7 +243,7 @@ a {
   margin-left: 3px;
 }
 .artistSearch__area{
-  display: block;
+  display: none;
 }
 
 .artistSearch_areaBox{
@@ -267,6 +267,7 @@ a {
   border-left: 14px solid #f2f2f2;
   border-right: 14px solid #f2f2f2;
   border-bottom: 9px solid #f2f2f2;
+  display: none;
 }
 .artistSearch_areaBox ul li{
   border-bottom: 2px solid #f2f2f2;
