@@ -181,18 +181,19 @@ a {
   height: 40px;
   box-sizing: border-box;
   margin-right: 124px;
-  width: 100%;
+  width: 90%;
   font-size: 12px;
   padding-left: 10px;
 }
 .js-artistSearchButton{
+  text-align: center;
   background-color: #f2f2f2 !important;
   border: 1px solid #ccc !important;
   color: #333 !important;
   cursor: pointer;
   position: absolute;
   top: 65px;
-  right: -124px;
+  right: -5px;
   width: 117px;
   height: 40px;
   font-size: 14px;
@@ -240,6 +241,40 @@ a {
   letter-spacing: .05em;
   padding: 3px 5px;
   margin-left: 3px;
+}
+.artistSearch__area{
+  display: block;
+}
+
+.artistSearch_areaBox{
+  text-align: center;
+  width: 31%;
+  margin-top: 15px;
+  margin-right: 1.272727%;
+  display: inline-block;
+  vertical-align: top;
+}
+.artistSearch_areaName{
+  height: 48px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  letter-spacing: .1em;
+  line-height: 48px;
+  position: relative;
+  cursor: pointer;
+}
+.artistSearch_areaBox ul{
+  border-left: 14px solid #f2f2f2;
+  border-right: 14px solid #f2f2f2;
+  border-bottom: 9px solid #f2f2f2;
+}
+.artistSearch_areaBox ul li{
+  border-bottom: 2px solid #f2f2f2;
+}
+.artistSearch_areaBox ul li a{
+  font-size: 12px;
+  display: block;
+  padding: 10px 0;
 }
 .nav__logout{
   display: inline-block;
