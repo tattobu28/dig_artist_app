@@ -182,7 +182,6 @@ a {
   box-sizing: border-box;
   margin-right: 124px;
   width: 100%;
-  display: block;
   font-size: 12px;
   padding-left: 10px;
 }
@@ -218,6 +217,26 @@ a {
   letter-spacing: .1em;
   border-bottom: 2px solid #fff;
   padding-bottom: 5px;
+}
+.artistSearch_genre ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.artistSearch_genre li a {
+  color: #333;
+  border: 1px solid #e4e0e0;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  font-size: 10px;
+  letter-spacing: .05em;
+  padding: 3px 5px;
+  margin-left: 3px;
 }
 .nav__logout{
   display: inline-block;
