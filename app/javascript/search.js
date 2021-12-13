@@ -13,10 +13,19 @@ window.addEventListener('load', function(){
     }
   })
 })
+
 window.addEventListener('load', function(){
 
   const pullDownButton = document.getElementById("search-genre")
   const pullDownParents = document.getElementById("genre-lists")
+
+  pullDownButton.addEventListener('mouseover', function(){
+    pullDownButton.setAttribute("style", "opacity: 0.5;")
+  })
+
+  pullDownButton.addEventListener('mouseout', function(){
+    pullDownButton.removeAttribute("style", "opacity: 0.5;")
+  })
 
   pullDownButton.addEventListener('click', function() {
     if (pullDownParents.getAttribute("style") == "display:block;") {
