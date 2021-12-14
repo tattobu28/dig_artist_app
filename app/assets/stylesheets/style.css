@@ -565,13 +565,62 @@ a {
 /* フッター */
 
 .footer {
-  background-color: #999;
-  padding: 10px 0;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px 0 10px;
+  border-top: 1px solid #ccc;
+}
+.footer_inner{
+  box-sizing: border-box;
+  padding: 0 20px;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+.footernav{
+  font-size: 12px;
+  float: none;
+  padding: 10px 0 5px 0;
+}
+.footernav ul{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.footernav ul li{
+  display: inline-block;
+  padding: 0 2em;
+  line-height: 1.1;
+}
+.footernav ul li:hover{
+  opacity: 0.5;
+}
+.footernav ul li a{
+  font-size: 12px;
+  letter-spacing: .1em;
+  color: #000;
+}
+.footer_logo{
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 120px;
+  padding-bottom: 20px;
+}
+.footer_logo:hover{
+  opacity: 0.5;
 }
 .copyright {
-  text-align: center;
-  color: #fff;
+  display: inline-block;
+  vertical-align: bottom;
+  font-weight: 500;
+  letter-spacing: .1em;
   font-size: 10px;
+  text-align: left;
+  padding-bottom: 20px;
 }
 
 /* タブレット対応 */
