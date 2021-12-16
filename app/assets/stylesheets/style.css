@@ -429,6 +429,7 @@ a {
   font-size: 20px;
   border-bottom: #000 solid 1px;
   margin-bottom: 10px;
+  padding-top: 50px;
 }
 .card__wrapper {
   display: flex;
@@ -437,7 +438,14 @@ a {
   align-items: flex-start;
   min-height: calc(80vh - 161px);
 }
-
+.artist__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: calc(80vh - 161px);
+  margin-bottom: 80px;
+}
 .card {
   width: calc((100% - 50px) / 4);
   margin-bottom: 40px;
