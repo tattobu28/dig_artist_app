@@ -14,6 +14,12 @@
     <div class="card__wrapper">
       <%= render partial: "song", collection: @songs %>
     </div>
+    <div class="newitem">
+    <p>New Artists</p>
+    </div>
+    <div class="card__wrapper">
+      <%= render partial: "artist", collection: @artists %>
+    </div>
   </div>
 </main>
 <%= render "shared/footer" %>

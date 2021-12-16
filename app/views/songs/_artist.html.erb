@@ -1,0 +1,7 @@
+<div class="card">
+  <%= link_to image_tag(artist.image, class: :card__img ), artist_path(artist.id), method: :get %>
+  <div class="card__body">
+    <%= link_to artist.name, artist_path(artist.id), class: :card__artist %>
+    <%= link_to artist.genre.name, artist_path(artist.id), class: :card__genre %>
+  </div>
+</div>

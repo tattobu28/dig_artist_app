@@ -4,6 +4,7 @@ class SongsController < ApplicationController
 
   def index
     @songs = Song.order('id DESC').limit(4)
+    @artists = Artist.order('id DESC').limit(4)
   end
 
   def new

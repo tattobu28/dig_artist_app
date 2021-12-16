@@ -39,7 +39,10 @@ a {
 .header {
   background-color: #fff;
   margin-bottom: 48px;
-  padding: 20px 0;
+  padding: 20px 0 10px;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #ccc;
 }
 .inner {
   width: 1024px;
@@ -72,6 +75,9 @@ a {
   color: #000;
   background: #ebebeb;
 }
+.nav__center{
+  padding-top: 10px;
+}
 .navigation__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -84,7 +90,7 @@ a {
 }
 .navigation__btn::after {
   position: absolute;
-  bottom: -8px;
+  bottom: -10px;
   left: 0;
   content: '';
   width: 100%;
@@ -95,7 +101,7 @@ a {
   transition: .3s;
 }
 .navigation__btn:hover::after {
-  bottom: -4px;
+  bottom: -1px;
   opacity: 1;
   visibility: visible;
 }
@@ -375,7 +381,7 @@ a {
 .newitem{
   color: red;
   font-size: 20px;
-  border-bottom: black solid 1px;
+  border-bottom: #000 solid 1px;
   margin-bottom: 10px;
 }
 .card__wrapper {
@@ -383,7 +389,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: calc(100vh - 161px);
+  min-height: calc(80vh - 161px);
 }
 
 .card {
@@ -422,6 +428,25 @@ a {
   text-decoration: none;
 }
 .card__user:hover{
+  opacity: 0.5;
+}
+.card__artist {
+  display: block;
+  font-size: 20px;
+  color: #333333;
+  text-decoration: underline;
+  margin-bottom: 8px;
+}
+.card__artist:hover{
+  opacity: 0.5;
+}
+.card__genre {
+  display: block;
+  font-size: 12px;
+  color: #333333;
+  text-decoration: none;
+}
+.card__genre:hover{
   opacity: 0.5;
 }
 
