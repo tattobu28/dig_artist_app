@@ -7,7 +7,7 @@
       <div class="nav__center">
         <%= link_to "DIG ARTISTについて", root_path, class: :navigation__btn %>
         <%= link_to "お知らせ", root_path, class: :navigation__btn %>
-        <%= link_to "ランキング", root_path, class: :navigation__btn %>
+        <p id="ranking" class="navigation__btn"> ランキング</p>
       </div>
       <%# ログインしているときは以下を表示するようにしましょう %>
       <% if artist_signed_in? %>
@@ -276,6 +276,18 @@
           </div>
         </div>
       </div>
+      <ul id="ranking_menu" class="ranking_menu hidden">
+        <li>
+          <a href="/">
+            <span>アーティスト</span>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <span>楽曲</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>

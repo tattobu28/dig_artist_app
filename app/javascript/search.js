@@ -179,3 +179,22 @@ window.addEventListener('load', function(){
     }
   })
 })
+
+window.addEventListener('load', function(){
+
+  const pullDownButton = document.getElementById("ranking")
+  const pullDownParents = document.getElementById("ranking_menu")
+
+  pullDownButton.addEventListener('mouseover', function(){
+    pullDownParents.setAttribute("style", "display:block;")
+  })
+  pullDownParents.addEventListener('mouseover', function(){
+    pullDownParents.setAttribute("style", "display:block;")
+  })
+  pullDownButton.addEventListener('mouseout', function(){
+    pullDownParents.removeAttribute("style", "display:block;")
+  })
+  pullDownParents.addEventListener('mouseout', function(){
+    pullDownParents.removeAttribute("style", "display:block;")
+  })
+})
