@@ -14,10 +14,12 @@
             <%= link_to "編集する", edit_artist_registration_path(@artist), class: :artist__btn %>
           </div>
         <% end %>
+        <% if @artist.info.present? %>
           <tr>
             <th class="table__col1">プロフィール</th>
             <td class="table__col2"><%= @artist.info %></td>
           </tr>
+        <% end %>
           <tr>
             <th class="table__col1">メンバー</th>
             <td class="table__col2"><%= @artist.member %></td>
@@ -30,18 +32,24 @@
             <th class="table__col1">ジャンル</th>
             <td class="table__col2"><%= @artist.genre.name %></td>
           </tr>
+        <% if @artist.website.present? %>
           <tr>
             <th class="table__col1">Website</th>
             <td class="table__col2"><%= @artist.website %></td>
           </tr>
+        <% end %>
+        <% if @artist.twitter.present? %>
           <tr>
             <th class="table__col1">Twitter</th>
             <td class="table__col2"><%= @artist.twitter %></td>
           </tr>
+        <% end %>
+        <% if @artist.instagram.present? %>
           <tr>
             <th class="table__col1">Instagram</th>
             <td class="table__col2"><%= @artist.instagram %></td>
           </tr>
+        <% end %>
         </tbody>
       </table>
       <h2 class="page-heading">
