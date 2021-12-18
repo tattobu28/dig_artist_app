@@ -5,7 +5,7 @@
       <div class="prototype__image">
         <%= image_tag @artist.image, class: :song__img %>
       </div>
-      <h2 class="page-heading">
+      <h2 class="show_artist_name">
         <%= @artist.name%>
       </h2>
       <table class="table">
@@ -52,11 +52,13 @@
         <% end %>
         </tbody>
       </table>
-      <h2 class="page-heading">
-        <%= "楽曲リスト"%>
-      </h2>
-      <div class="user__card">
-        <%= render partial: 'songs/song',collection: @songs %>
+      <div class="songs__lists">
+        <h2 class="song__list">
+          <%= "楽曲リスト"%>
+        </h2>
+        <div class="user__card">
+          <%= render partial: 'songs/song',collection: @songs %>
+        </div>
       </div>
     </div>
   </div>

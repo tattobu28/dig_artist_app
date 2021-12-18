@@ -512,6 +512,7 @@ a {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  margin-top: 10px;
 }
 .prototype__user{
   display: block;
@@ -530,8 +531,12 @@ a {
   height: 250px;
   object-fit: cover;
 }
+.song__body{
+  margin-bottom: 50px;
+}
 .prototype__song{
   text-align: center;
+  margin-top: 5px;
 }
 .song__img {
   width: 250px;
@@ -547,8 +552,33 @@ a {
 .detail__title{
   font-weight: bold;
 }
+.detail__title__lyric{
+  margin-top: 20px;
+  font-weight: bold;
+}
 .detail__lyric{
   white-space: pre-wrap;
+  margin-top: 20px;
+}
+.aritist__info{
+  text-align: center;
+  margin-bottom: 50px;
+  border-top: 1px solid #ccc;
+  width: 1024px;
+}
+.artist_info_title{
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.artist_info_image{
+  margin: 20px;
+}
+.artist_info_name{
+  font-size: 18px;
+}
+.artist_info_name:hover{
+  opacity: 0.5;
 }
 .prototype__manage{
   display: flex;
@@ -598,6 +628,10 @@ a {
   min-height: calc(100vh - 161px);
   text-align: center;
 }
+.show_artist_name{
+  font-size: 25px;
+  margin: 28px;
+}
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
@@ -619,6 +653,16 @@ a {
   border-collapse: collapse;
   width: 70%;
   padding: 16px 8px;
+}
+.songs__lists{
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.song__list{
+  font-size: 25px;
+  margin-bottom: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
 }
 .user__card {
   display: flex;
