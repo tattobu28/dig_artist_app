@@ -186,12 +186,11 @@ a {
   max-height: 682px;
   display: block;
   z-index: 5050;
-  position: fixed;
   left: 0;
+  position: fixed;
   overflow-y: auto;
   box-sizing: border-box;
   width: 100%;
-  position: absolute;
   padding: 20px 0 60px;
   top: 70px;
   background-color: #fff;
@@ -345,6 +344,17 @@ a {
 }
 .nav__logout:hover{
   opacity: 0.5;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 68px;
+  bottom: 0;
+  right: 0;
+  background-color: #aaa;
+  opacity: 0.7;
 }
 
 /* フォーム周り */
@@ -621,6 +631,12 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+}
+
+/* 検索ページ */
+.search__card{
+  width: calc((100% - 50px) / 4);
+  margin-bottom: 40px;
 }
 
 /* ユーザーページ */

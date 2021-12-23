@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   get 'songs/index'
   root to: "songs#index"
   resources :songs
-  resources :artists, only: [:show, :edit, :update, :destory]
+  resources :artists, only: [:show, :edit, :update, :destory] do
+    collection do
+      get 'search'
+    end
+  end
 end

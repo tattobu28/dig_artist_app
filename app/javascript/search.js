@@ -3,6 +3,7 @@ window.addEventListener('load', function(){
   const pullDownButton = document.getElementById("search")
   const pullDownParents = document.getElementById("pull-down")
   const pullDownGenre = document.getElementById("genre-lists")
+  const pullDownModal = document.getElementById("modal")
 
 
   pullDownButton.addEventListener('click', function() {
@@ -13,13 +14,20 @@ window.addEventListener('load', function(){
       // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
       pullDownParents.setAttribute("style", "display:block;")
     }
-      if (pullDownGenre.getAttribute("style") == "display:block;") {
-        // pullDownParentsにdisplay:block;が付与されている場合（つまり表示されている時）実行される
-        pullDownGenre.removeAttribute("style", "display:block;")
-      } else {
-        // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
-        pullDownGenre.setAttribute("style", "display:block;")
-      }
+    if (pullDownGenre.getAttribute("style") == "display:block;") {
+      // pullDownParentsにdisplay:block;が付与されている場合（つまり表示されている時）実行される
+      pullDownGenre.removeAttribute("style", "display:block;")
+    } else {
+      // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
+      pullDownGenre.setAttribute("style", "display:block;")
+    }
+    if (pullDownModal.getAttribute("style") == "display:block;") {
+      // pullDownParentsにdisplay:block;が付与されている場合（つまり表示されている時）実行される
+      pullDownModal.removeAttribute("style", "display:block;")
+    } else {
+      // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
+      pullDownModal.setAttribute("style", "display:block;")
+    }
   })
 })
 
@@ -196,5 +204,37 @@ window.addEventListener('load', function(){
   })
   pullDownParents.addEventListener('mouseout', function(){
     pullDownParents.removeAttribute("style", "display:block;")
+  })
+})
+
+window.addEventListener('load', function(){
+
+  const pullDownParents = document.getElementById("pull-down")
+  const pullDownGenre = document.getElementById("genre-lists")
+  const pullDownModal = document.getElementById("modal")
+
+
+  pullDownModal.addEventListener('click', function() {
+    if (pullDownParents.getAttribute("style") == "display:block;") {
+      // pullDownParentsにdisplay:block;が付与されている場合（つまり表示されている時）実行される
+      pullDownParents.removeAttribute("style", "display:block;")
+    } else {
+      // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
+      pullDownParents.setAttribute("style", "display:block;")
+    }
+    if (pullDownGenre.getAttribute("style") == "display:block;") {
+      // pullDownParentsにdisplay:block;が付与されている場合（つまり表示されている時）実行される
+      pullDownGenre.removeAttribute("style", "display:block;")
+    } else {
+      // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
+      pullDownGenre.setAttribute("style", "display:block;")
+    }
+    if (pullDownModal.getAttribute("style") == "display:block;") {
+      // pullDownParentsにdisplay:block;が付与されている場合（つまり表示されている時）実行される
+      pullDownModal.removeAttribute("style", "display:block;")
+    } else {
+      // pullDownParentsにdisplay:block;が付与されていない場合（つまり非表示の時）実行される
+      pullDownModal.setAttribute("style", "display:block;")
+    }
   })
 })

@@ -31,10 +31,12 @@
           <p class="ttl_artistSearch">アーティスト検索</p>
           <div class="artistSearch_keyword">
             <p>フリーワードで探す</p>
-            <form id="freewordSearch" action="">
-              <input maxlength="30" type="text" name="searchKeyword" placeholder="アーティスト名を入力" class="js-artistSearch">
-              <input tyoe="button" name="artistSearchBtn" value="Search" class="js-artistSearchButton" disabled>
-            </form>
+              <%= search_form_for Artist.ransack(params[:q]), url: search_artists_path, html: {class: "search-form"} do |f| %>
+                <%= f.text_field :name, placeholder: 'アーティスト名を入力', class: 'js-artistSearch' %>
+                <%= f.label :submit, class: "artistSearchBtn" do %>
+                  <%= f.submit :search, class: "js-artistSearchButton" %>
+                <% end %>
+              <% end %>
           </div>
           <div class="artistSearch_select">
             <ul class="artistSearch_tabs">
@@ -276,6 +278,8 @@
           </div>
         </div>
       </div>
+        <div id="modal" class="modal">
+        </div>
       <ul id="ranking_menu" class="ranking_menu hidden">
         <li>
           <a href="/">
