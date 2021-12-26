@@ -711,6 +711,29 @@ a {
   color: #fff;
   background: #999;
 }
+.share__btn{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.twitter_icon{
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  margin-left: 15px;
+}
+.twitter_icon:hover{
+  opacity: 0.6;
+}
+.facebook_icon{
+  width: 26px;
+  height: 26px;
+  background-size: cover;
+  margin-left: 15px;
+}
+.facebook_icon:hover{
+  opacity: 0.6;
+}
 /* フッター */
 
 .footer {

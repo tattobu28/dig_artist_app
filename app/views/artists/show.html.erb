@@ -10,7 +10,7 @@
       </h2>
       <table class="table">
         <tbody>
-        <% if artist_signed_in? && current_artist.id %>
+        <% if artist_signed_in? && current_artist.artist_id == @artist.artist_id %>
             <%= link_to "編集する", edit_artist_registration_path(@artist), class: :artist__btn %>
           </div>
         <% end %>
@@ -43,17 +43,27 @@
         <% if @artist.twitter.present? %>
           <tr>
             <th class="table__col1">Twitter</th>
-            <td class="table__col2"><%= @artist.twitter %></td>
+            <td class="table__col3">
+            <%=link_to @artist.twitter, "https://twitter.com/#{@artist.twitter}" %>
+            </td>
           </tr>
         <% end %>
         <% if @artist.instagram.present? %>
           <tr>
             <th class="table__col1">Instagram</th>
-            <td class="table__col2"><%= @artist.instagram %></td>
+            <td class="table__col3">
+            <%=link_to @artist.instagram, "https://www.instagram.com/#{@artist.instagram}" %>
+            </td>
           </tr>
         <% end %>
         </tbody>
       </table>
+      <div class="share__btn">
+        <p>Share</p>
+        <%= link_to image_tag('twitterアイコン', class: :twitter_icon), "https://twitter.com/share?url=#{request.url}
+          &text=#{@artist.name}のDIG ARTISTページ", data: { show_count: false }, title: 'Twitter', target: '_blank' %>
+        <%= link_to image_tag('facebookアイコン', class: :facebook_icon), root_path %>
+      </div>
       <div class="songs__lists">
         <h2 class="song__list">
           <%= "楽曲リスト"%>
