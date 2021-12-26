@@ -11,6 +11,7 @@
           <div class="card__body">
             <%= link_to artist.name, artist_path(artist.id), class: :card__artist %>
             <%= link_to artist.genre.name, artist_path(artist.id), class: :card__genre %>
+            <%= link_to artist.city.name, artist_path(artist.id), class: :card__genre %>
           </div>
         </div>
       <% end %>

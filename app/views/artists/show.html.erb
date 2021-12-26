@@ -35,7 +35,9 @@
         <% if @artist.website.present? %>
           <tr>
             <th class="table__col1">Website</th>
-            <td class="table__col2"><%= @artist.website %></td>
+            <td class="table__col3">
+            <%=link_to @artist.website, @artist.website %>
+            </td>
           </tr>
         <% end %>
         <% if @artist.twitter.present? %>
