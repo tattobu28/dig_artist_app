@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+<div class="main">
+  <div class="inner">
+    <div class="newitem">
+    <p>Ranking Artists</p>
+    </div>
+    <div class="artist__wrapper">
+      <%= render partial: "songs/artist", collection: @artists %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

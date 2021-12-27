@@ -12,4 +12,8 @@ class ArtistsController < ApplicationController
     @q = Artist.ransack(params[:q])
     @artists = @q.result
   end
+
+  def ranking
+    @artists = Artist.order('id DESC')
+  end
 end

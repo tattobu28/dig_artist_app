@@ -282,14 +282,10 @@
         </div>
       <ul id="ranking_menu" class="ranking_menu hidden">
         <li>
-          <a href="/">
-            <span>アーティスト</span>
-          </a>
+          <%= link_to "アーティスト", ranking_artists_path, class: :ranking_menu_title %>
         </li>
         <li>
-          <a href="/">
-            <span>楽曲</span>
-          </a>
+          <%= link_to "楽曲", ranking_songs_path, class: :ranking_menu_title %>
         </li>
       </ul>
     </div>

@@ -6,10 +6,15 @@ Rails.application.routes.draw do
   get 'artists/:id/profile', to: 'artists#show', as: 'artist_profile'
   get 'songs/index'
   root to: "songs#index"
-  resources :songs
+  resources :songs do
+    collection do
+      get 'ranking'
+    end
+  end
   resources :artists, only: [:show, :edit, :update, :destory] do
     collection do
       get 'search'
+      get 'ranking'
     end
   end
 end
