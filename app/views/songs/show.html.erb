@@ -44,6 +44,12 @@
           </div>
         <% end %>
       </div>
+      <div class="song__share__btn">
+        <p>Share</p>
+        <%= link_to image_tag('twitterアイコン', class: :twitter_icon), "https://twitter.com/share?url=#{request.url}
+          &text=#{@song.artist.name}の「#{@song.title}」をDIG ARTISTで聴こう！", data: { show_count: false }, title: 'Twitter', target: '_blank', rel: "noopener noreferrer" %>
+        <%= link_to image_tag('facebookアイコン', class: :facebook_icon), root_path %>
+      </div>
       <div class="aritist__info">
         <p class="artist_info_title">アーティスト情報</p>
         <div class="artist_info_image">

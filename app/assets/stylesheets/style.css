@@ -632,6 +632,15 @@ a {
   color: #999;
   text-decoration: underline;
 }
+.song__share__btn{
+  display: flex;
+  justify-content: center;
+  border: #ccc solid 2px;
+  width: 180px;
+  margin: 30px auto;
+  border-radius: 30px;
+  padding: 5px 0;
+}
 
 /* 検索ページ */
 .search__card{
@@ -714,8 +723,11 @@ a {
 .share__btn{
   display: flex;
   justify-content: center;
-  padding-top: 20px;
-  margin-right: 27px;
+  border: #ccc solid 2px;
+  width: 180px;
+  margin: 30px auto;
+  border-radius: 30px;
+  padding: 5px 0;
 }
 .twitter_icon{
   width: 28px;
