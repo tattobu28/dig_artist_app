@@ -36,7 +36,7 @@
           <tr>
             <th class="table__col1">Website</th>
             <td class="table__col3">
-            <%=link_to @artist.website, @artist.website %>
+            <%=link_to @artist.website, @artist.website, target: :_blank, rel: "noopener noreferrer" %>
             </td>
           </tr>
         <% end %>
@@ -44,7 +44,7 @@
           <tr>
             <th class="table__col1">Twitter</th>
             <td class="table__col3">
-            <%=link_to @artist.twitter, "https://twitter.com/#{@artist.twitter}" %>
+            <%=link_to @artist.twitter, "https://twitter.com/#{@artist.twitter}", target: :_blank, rel: "noopener noreferrer" %>
             </td>
           </tr>
         <% end %>
@@ -52,7 +52,7 @@
           <tr>
             <th class="table__col1">Instagram</th>
             <td class="table__col3">
-            <%=link_to @artist.instagram, "https://www.instagram.com/#{@artist.instagram}" %>
+            <%=link_to @artist.instagram, "https://www.instagram.com/#{@artist.instagram}", target: :_blank, rel: "noopener noreferrer" %>
             </td>
           </tr>
         <% end %>
@@ -61,7 +61,7 @@
       <div class="share__btn">
         <p>Share</p>
         <%= link_to image_tag('twitterアイコン', class: :twitter_icon), "https://twitter.com/share?url=#{request.url}
-          &text=#{@artist.name}のDIG ARTISTページ", data: { show_count: false }, title: 'Twitter', target: '_blank' %>
+          &text=#{@artist.name}のDIG ARTISTページ", data: { show_count: false }, title: 'Twitter', target: '_blank', rel: "noopener noreferrer" %>
         <%= link_to image_tag('facebookアイコン', class: :facebook_icon), root_path %>
       </div>
       <div class="songs__lists">
