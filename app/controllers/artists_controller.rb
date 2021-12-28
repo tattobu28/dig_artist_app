@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @songs = @artist.songs.order('id DESC')
+    impressionist(@artist, nil, unique: [:session_hash])
   end
 
   def search
@@ -14,6 +15,6 @@ class ArtistsController < ApplicationController
   end
 
   def ranking
-    @artists = Artist.order('id DESC')
+    @artists = Artist.order(impressions_count: 'DESC')
   end
 end

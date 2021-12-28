@@ -37,10 +37,11 @@ class SongsController < ApplicationController
   end
 
   def show
+    impressionist(@song, nil, unique: [:session_hash])
   end
 
   def ranking
-    @songs = Song.order('id DESC')
+    @songs = Song.order(impressions_count: 'DESC')
   end
 
   private
