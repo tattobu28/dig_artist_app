@@ -1,10 +1,10 @@
 class Artist < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   is_impressionable counter_cache: true
-  
+
   belongs_to :genre
   belongs_to :city
-  has_many :songs, :dependent => :destroy
+  has_many :songs, dependent: :destroy
   has_one_attached :image
 
   devise :database_authenticatable, :registerable,

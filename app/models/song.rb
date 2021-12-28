@@ -1,6 +1,6 @@
 class Song < ApplicationRecord
   is_impressionable counter_cache: true
-  
+
   mount_uploader :file, AudiofileUploader
   belongs_to :artist
   has_one_attached :image
