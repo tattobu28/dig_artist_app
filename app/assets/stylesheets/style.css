@@ -747,6 +747,67 @@ a {
 .facebook_icon:hover{
   opacity: 0.6;
 }
+/* ランキングページ */
+
+.rankpage_title{
+  text-align: center;
+  padding: 50px 20px 40px;
+  border-bottom: solid 1px #333;
+  margin-bottom: 50px;
+}
+.page_title{
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: .12em;
+}
+.page_title::after{
+  content: " ";
+  display: block;
+  background-color: #ccc;
+  height: 1px;
+  width: 40px;
+  margin: 20px auto 0;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+}
+.ranking_category{
+  padding-top: 20px;
+  text-align: center;
+  letter-spacing: .12em;
+}
+.ranking_category ul{
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.ranking_category li:first-child{
+  border-left: none;
+  text-align: center;
+}
+.ranking_category li{
+  border-left: 1px solid #ccc;
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: bold;
+}
+.ranking_category li span{
+  color: #333;
+  border-bottom: 3px solid #333;
+}
+.ranking_category li a{
+  color: #ccc;
+  border-bottom: 3px solid #fff;
+}
+.ranking_category li a:hover{
+  color: #333;
+}
 /* フッター */
 
 .footer {

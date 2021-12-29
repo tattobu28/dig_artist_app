@@ -1,8 +1,16 @@
 <%= render "shared/header" %>
 <div class="main">
   <div class="inner">
-    <div class="newitem">
-    <p>Ranking Artists</p>
+    <div class="rankpage_title">
+      <h1 class="page_title">ランキング</h1>
+      <ul class="ranking_category">
+        <li>
+          <span>アーティスト</span>
+        </li>
+        <li>
+        <a href="/songs/ranking">楽曲</a>
+        </li>
+      </ul>
     </div>
     <div class="artist__wrapper">
     <% last_impression = 1 %>
