@@ -5,7 +5,29 @@
     <p>Ranking Songs</p>
     </div>
     <div class="card__wrapper">
-      <%= render partial: "song", collection: @songs %>
-    </div>  </div>
+      <% last_impression = 1 %>
+      <% j = 1 %>
+      <% @songs.each_with_index do |song, i| %>
+        <% if i == 1 %>
+          <% last_impression = song.impressions_count %>
+        <% end %>
+        <div class="card">
+          <% if song.impressions_count != last_impression %>
+            <% j = i %>
+              <%= j %>位
+              <% last_impression = song.impressions_count %>
+          <% else %>
+            <% last_impression = song.impressions_count %>
+              <%= j %>位
+          <% end %>
+          <%= link_to image_tag(song.image, class: :card__img ), song_path(song.id), method: :get %>
+          <div class="card__body">
+            <%= link_to song.title, song_path(song.id), method: :get , class: :card__title%>
+            <%= link_to song.artist.name, artist_path(song.artist.id), class: :card__user %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 <%= render "shared/footer" %>

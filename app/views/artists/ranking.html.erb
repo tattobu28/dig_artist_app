@@ -5,7 +5,29 @@
     <p>Ranking Artists</p>
     </div>
     <div class="artist__wrapper">
-      <%= render partial: "artist", collection: @artists %>
+    <% last_impression = 1 %>
+    <% j = 1 %>
+    <% @artists.each_with_index do |artist, i| %>
+      <% if i == 1 %>
+        <% last_impression = artist.impressions_count %>
+      <% end %>
+      <div class="card">
+      <% if artist.impressions_count != last_impression %>
+        <% j = i %>
+          <%= j %>位
+          <% last_impression = artist.impressions_count %>
+      <% else %>
+        <% last_impression = artist.impressions_count %>
+          <%= j %>位
+      <% end %>
+        <%= link_to image_tag(artist.image, class: :card__img ), artist_path(artist.id), method: :get %>
+        <div class="card__body">
+          <%= link_to artist.name, artist_path(artist.id), class: :card__artist %>
+          <%= link_to artist.genre.name, artist_path(artist.id), class: :card__genre %>
+          <%= link_to artist.city.name, artist_path(artist.id), class: :card__genre %>
+        </div>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
