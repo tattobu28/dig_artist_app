@@ -10,7 +10,7 @@ class Artist < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :artist_id, presence: true, format: {with: /\A[a-zA-Z0-9]+\z/, message: "は半角英数字で入力してください"}
+  validates :artist_id, presence: true, format: { with: /\A[a-zA-Z0-9]+\z/, message: 'は半角英数字で入力してください' }
   validates :name,      presence: true
   validates :member,    presence: true
   validates :city_id,   presence: true, numericality: { other_than: 0, message: 'を入力してください' }
