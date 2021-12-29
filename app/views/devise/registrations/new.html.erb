@@ -20,7 +20,7 @@
             <label class="form-text">ID</label>
             <span class="indispensable">必須</span>
           </div>
-          <%= f.text_field :artist_id, class: :form__text, id:"artist_artist_id", autofocus: true, placeholder:" 例) artist12" %>
+          <%= f.text_field :artist_id, class: :form__text, id:"artist_artist_id", autofocus: true, placeholder:" 半角英数字で入力してください" %>
           <p class='info__text'>※英字と数字の両方を含めて設定してください</p>
         </div>
 
@@ -61,7 +61,7 @@
 
         <div class="field">
           <%= f.label :website, "Website" %><br />
-          <%= f.text_field :website, class: :form__text, id:"artist_website", placeholder:" ウェブサイトやYouTubeページのURLを入力してください" %>
+          <%= f.text_field :website, class: :form__text, id:"artist_website", placeholder:" ウェブサイトやYouTubeページのURLを入力してください。例) https://~" %>
         </div>
 
         <div class="field">

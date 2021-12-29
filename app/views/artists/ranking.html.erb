@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="artist__wrapper">
-    <% last_impression = 1 %>
+    <% last_impression = 0 %>
     <% j = 1 %>
     <% @artists.each_with_index do |artist, i| %>
       <% if i == 1 %>
@@ -22,11 +22,11 @@
       <div class="card">
       <% if artist.impressions_count != last_impression %>
         <% j = i %>
-          <%= j %>位
+          <%= j+1 %>位
           <% last_impression = artist.impressions_count %>
       <% else %>
         <% last_impression = artist.impressions_count %>
-          <%= j %>位
+          <%= j+1 %>位
       <% end %>
         <%= link_to image_tag(artist.image, class: :card__img ), artist_path(artist.id), method: :get %>
         <div class="card__body">
