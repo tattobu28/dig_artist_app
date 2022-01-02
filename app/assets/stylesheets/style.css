@@ -641,7 +641,11 @@ a {
   border-radius: 30px;
   padding: 5px 0;
 }
-
+.video{
+  height: 250px;
+  width: 458px;
+  margin-right: 1000px;
+}
 /* 検索ページ */
 .search__card{
   width: calc((100% - 50px) / 4);

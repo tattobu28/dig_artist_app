@@ -1,0 +1,57 @@
+<%= render "shared/header" %>
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <div class="prototype__image">
+        <iframe class="video" src="https://www.youtube.com/embed/<%= @youtube.url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  >
+        </iframe>
+      </div>
+      <% if artist_signed_in? && current_artist.id == @youtube.artist_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集する", edit_youtube_path(@youtube), class: :prototype__btn %>
+          <%= link_to "削除する", "/songs/#{@youtube.id}",method: :delete, class: :prototype__btn %>
+        </div>
+      <% end %>
+      <p class="prototype__hedding">
+        <%= @youtube.title %>
+      </p>
+      <%= link_to @youtube.artist.name, artist_path(@youtube.artist.id), class: :prototype__user %>
+      <div class="song__body">
+        <% if @youtube.writer.present? %>
+          <div class="song__detail">
+            <p class="detail__title">作詞</p>
+            <p class="detail__message">
+              <%= @youtube.writer %>
+            </p>
+          </div>
+        <% end %>
+        <div class="song__detail">
+          <p class="detail__title">作曲</p>
+          <p class="detail__message">
+            <%= @youtube.composer %>
+          </p>
+        </div>
+        <% if @youtube.lyric.present? %>
+          <div class="song__detail">
+            <p class="detail__title__lyric">歌詞</p>
+            <p class="detail__lyric"><%= @youtube.lyric %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="song__share__btn">
+        <p>Share</p>
+        <%= link_to image_tag('twitterアイコン', class: :twitter_icon), "https://twitter.com/share?url=#{request.url}
+          &text=#{@youtube.artist.name}の「#{@youtube.title}」をDIG ARTISTで聴こう！", data: { show_count: false }, title: 'Twitter', target: '_blank', rel: "noopener noreferrer" %>
+        <%= link_to image_tag('facebookアイコン', class: :facebook_icon), root_path %>
+      </div>
+      <div class="aritist__info">
+        <p class="artist_info_title">アーティスト情報</p>
+        <div class="artist_info_image">
+          <%= image_tag @youtube.artist.image, class: :song__img %>
+        </div>
+        <%= link_to @youtube.artist.name, artist_path(@youtube.artist.id), class: :artist_info_name %>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render "shared/footer" %>
