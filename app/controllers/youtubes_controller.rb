@@ -17,10 +17,10 @@ class YoutubesController < ApplicationController
       render :new
     end
   end
-
+  
   def destroy
     @youtube.destroy
-    redirect_to action: 'index'
+    redirect_to root_path
   end
 
   def edit
