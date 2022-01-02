@@ -1,0 +1,8 @@
+<div class="card">
+  <iframe class="video" src="https://www.youtube.com/embed/#{youtube.url[32..42]}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+  <div class="card__body">
+    <%= link_to youtube.title, youtube_path(youtube.id), method: :get , class: :card__title%>
+    <%= link_to youtube.artist.name, artist_path(youtube.artist.id), class: :card__user %>
+  </div>
+</div>

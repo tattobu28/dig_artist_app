@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_141350) do
+ActiveRecord::Schema.define(version: 2022_01_01_125623) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -95,6 +95,21 @@ ActiveRecord::Schema.define(version: 2021_12_28_141350) do
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
+  create_table "youtubes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "url", null: false
+    t.string "title", null: false
+    t.text "info", null: false
+    t.string "writer"
+    t.string "composer", null: false
+    t.text "lyric"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "impressions_count", default: 0
+    t.index ["artist_id"], name: "index_youtubes_on_artist_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "songs", "artists"
+  add_foreign_key "youtubes", "artists"
 end

@@ -17,4 +17,9 @@ Rails.application.routes.draw do
       get 'ranking'
     end
   end
+  resources :youtubes do
+    collection do
+      get 'ranking'
+    end
+  end
 end

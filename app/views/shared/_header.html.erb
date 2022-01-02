@@ -15,6 +15,7 @@
           <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
           <%= link_to "ログアウト", destroy_artist_session_path, method: :delete, class: :nav__logout %>
           <%= link_to "楽曲アップロード", new_song_path, class: :song_up__btn %>
+          <%= link_to "MVアップロード", new_youtube_path, class: :song_up__btn %>
         </div>
       <%# // ログインしているときは上記を表示するようにしましょう %>
       <%# ログインしていないときは以下を表示するようにしましょう %>

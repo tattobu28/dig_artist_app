@@ -1,0 +1,45 @@
+<%= form_with model: @youtube, class: 'registration-main', local: true do |f|%>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">Youtube URL</label>
+      <span class="indispensable">必須</span>
+    </div>
+      <%= f.text_field :url, class: :form__text, id:"song_title", autofocus: true, placeholder:" YoutubeのURLを入力してください" %>
+  </div>
+
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">タイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+      <%= f.text_field :title, class: :form__text, id:"song_title", autofocus: true, placeholder:" タイトルを入力してください" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info, "楽曲紹介" %><br />
+    <%= f.text_area :info, class: :form__text, id:"song_info", placeholder:" 楽曲紹介を入力してください" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :writer, "作詞" %><br />
+    <%= f.text_field :writer, class: :form__text, id:"song_writer", placeholder:" 作詞者を入力してください" %>
+  </div>
+
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">作曲</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :composer, class: :form__text, id:"song_composer", placeholder:" 作曲者を入力してください" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lyric, "歌詞" %><br />
+    <%= f.text_area :lyric, class: :form__text, id:"song_lyric", placeholder:" 歌詞を入力してください" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -6,6 +6,7 @@ class Artist < ApplicationRecord
   belongs_to :city
   has_many :songs, dependent: :destroy
   has_one_attached :image
+  has_many :youtubes, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
