@@ -1,0 +1,47 @@
+<%= render "shared/header" %>
+<div class="main">
+  <div class="inner">
+    <div class="rankpage_title">
+      <h1 class="page_title">ランキング</h1>
+      <ul class="ranking_category">
+        <li>
+          <a href="/artists/ranking">アーティスト</a>
+        </li>
+        <li>
+          <a href="/songs/ranking">楽曲</a>
+        </li>
+        <li>
+          <span>MV</span>
+        </li>
+      </ul>
+    </div>
+    <div class="card__wrapper">
+      <% last_impression = 0 %>
+      <% j = 1 %>
+      <% @youtubes.each_with_index do |youtube, i| %>
+        <% if i == 1 %>
+          <% last_impression = youtube.impressions_count %>
+        <% end %>
+        <div class="card">
+          <% if youtube.impressions_count != last_impression %>
+            <% j = i %>
+              <%= j+1 %>位
+              <% last_impression = youtube.impressions_count %>
+          <% else %>
+            <% last_impression = youtube.impressions_count %>
+              <%= j+1 %>位
+          <% end %>
+          <div class="card">
+              <iframe class="card__img" src="https://www.youtube.com/embed/<%= youtube.url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  >
+              </iframe>
+            <div class="card__body">
+            <%= link_to youtube.title, youtube_path(youtube.id), method: :get , class: :card__title%>
+            <%= link_to youtube.artist.name, artist_path(youtube.artist.id), class: :card__user %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

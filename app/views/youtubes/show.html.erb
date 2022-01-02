@@ -9,7 +9,7 @@
       <% if artist_signed_in? && current_artist.id == @youtube.artist_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_youtube_path(@youtube), class: :prototype__btn %>
-          <%= link_to "削除する", "/songs/#{@youtube.id}",method: :delete, class: :prototype__btn %>
+          <%= link_to "削除する", "/youtubes/#{@youtube.id}",method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
       <p class="prototype__hedding">
