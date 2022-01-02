@@ -10,14 +10,14 @@ class YoutubesController < ApplicationController
     @youtube = Youtube.new(youtube_params)
     url = params[:youtube][:url]
     url = url.last(11)
-    @youtube.url = url  
+    @youtube.url = url
     if @youtube.save
       redirect_to root_path
     else
       render :new
     end
   end
-  
+
   def destroy
     @youtube.destroy
     redirect_to root_path
