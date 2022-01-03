@@ -105,6 +105,10 @@ a {
   opacity: 1;
   visibility: visible;
 }
+.nav__right{
+  display: block;
+  margin: 0 0 0 auto;
+}
 .ranking_menu{
   background-color: #fff;
   position: absolute;
@@ -115,7 +119,7 @@ a {
   left: 0;
   border-top: 1px solid #e6e4e4;
   border-bottom: 1px solid #e6e4e4;
-  padding-left: 741.5px;
+  padding-left: 771.5px;
 }
 .hidden{
   display: none;
@@ -641,10 +645,12 @@ a {
   border-radius: 30px;
   padding: 5px 0;
 }
+.music__video{
+  text-align: center;
+}
 .video{
-  height: 250px;
-  width: 458px;
-  margin-right: 1000px;
+  height: 270px;
+  width: 480px;
 }
 /* 検索ページ */
 .search__card{

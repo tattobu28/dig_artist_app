@@ -23,6 +23,14 @@
       </p>
       <%= link_to @song.artist.name, artist_path(@song.artist.id), class: :prototype__user %>
       <div class="song__body">
+        <% if @song.info.present? %>
+          <div class="song__detail">
+            <p class="detail__title">楽曲紹介</p>
+            <p class="detail__message">
+              <%= @song.info %>
+            </p>
+          </div>
+        <% end %>
         <% if @song.writer.present? %>
           <div class="song__detail">
             <p class="detail__title">作詞</p>
