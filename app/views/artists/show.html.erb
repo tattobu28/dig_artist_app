@@ -69,7 +69,15 @@
           <%= "楽曲リスト"%>
         </h2>
         <div class="user__card">
-          <%= render partial: 'songs/song',collection: @songs %>
+          <%= render partial: 'song',collection: @songs %>
+        </div>
+      </div>
+      <div class="songs__lists">
+        <h2 class="song__list">
+          <%= "MVリスト"%>
+        </h2>
+        <div class="user__card">
+          <%= render partial: 'youtubes/youtube',collection: @youtubes %>
         </div>
       </div>
     </div>
