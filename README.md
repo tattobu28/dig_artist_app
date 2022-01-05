@@ -24,34 +24,56 @@ URL:
 # DEMO
 ## トップページ
 [![Image from Gyazo](https://i.gyazo.com/006e02cb3e8259d5dc10ce758b484aa3.gif)](https://gyazo.com/006e02cb3e8259d5dc10ce758b484aa3)
+
 上からNew Songs、New Artists、New MusicVideoを新着順で左から表示しております。
 
 ## トップページ(フリーワード検索)
 [![Image from Gyazo](https://i.gyazo.com/c5dd79164bb0bc2bf43f2d5f1576dca9.gif)](https://gyazo.com/c5dd79164bb0bc2bf43f2d5f1576dca9)
+
 検索したいワードを入力し、searchボタンをクリックするとそのワードが入っているアーティストが検索結果として表示されます。
 また「test guiter」のように文字と文字の間に半角スペース空けることで複数のワードで検索する事が出来ます。
 
 ## トップページ(ジャンル検索)
 [![Image from Gyazo](https://i.gyazo.com/d6d0e4adaf8cec4ef4f0d39a9b6f3163.gif)](https://gyazo.com/d6d0e4adaf8cec4ef4f0d39a9b6f3163)
+
 検索したいジャンルをクリックするとそのジャンルで登録されているアーティストが表示されます。
 
 ## トップページ(地域検索)
 [![Image from Gyazo](https://i.gyazo.com/0ea238ce1d34d112b3fdd4594a32e464.gif)](https://gyazo.com/0ea238ce1d34d112b3fdd4594a32e464)
+
 検索したい地域をクリックするとその地域で登録されているアーティストが表示されます。
 
 ## ランキング表示ページ
+[![Image from Gyazo](https://i.gyazo.com/22053680abf7b3b344d62c2e50de818e.gif)](https://gyazo.com/22053680abf7b3b344d62c2e50de818e)
+
+アーティスト、楽曲、MV別でランキングを表示されます。
 
 ## アーティスト新規登録ページ
+[![Image from Gyazo](https://i.gyazo.com/e0b6b4aedf65cdd28627598b44e75df2.gif)](https://gyazo.com/e0b6b4aedf65cdd28627598b44e75df2)
+
+必須項目を入力し、新規登録ボタンをクリックするとアーティスト登録が出来ます。
 
 ## アーティスト詳細ページ
+
 
 ## アーティスト編集、削除ページ
 
 ## 楽曲アップロードページ
+[![Image from Gyazo](https://i.gyazo.com/1cafd5ebf6089fea7a1c3a141951eaf3.gif)](https://gyazo.com/1cafd5ebf6089fea7a1c3a141951eaf3)
+
+必須項目を入力し、「保存する」ボタンをクリックすると楽曲を登録する事が出来ます。
 
 ## 楽曲詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/43fb0e3bcff19c70ed4ddd9053490ec7.gif)](https://gyazo.com/43fb0e3bcff19c70ed4ddd9053490ec7)
+
+楽曲を視聴、ダウンロード、シェアする事が出来ます。
+入力された項目が表示され、任意の項目は入力されていなければ表示されません。
+アップロードしたアーティストであれば編集、削除ボタンが表示されます。
 
 ## 楽曲編集、削除ページ
+[![Image from Gyazo](https://i.gyazo.com/4c2b9a2f70490e5773d97c0179035e8b.gif)](https://gyazo.com/4c2b9a2f70490e5773d97c0179035e8b)
+
+編集したい項目を入力し「保存する」ボタンをクリックすると編集した情報が保存できます。
 
 ## MVアップロードページ
 
