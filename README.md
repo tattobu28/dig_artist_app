@@ -26,6 +26,20 @@ URL:
 [![Image from Gyazo](https://i.gyazo.com/006e02cb3e8259d5dc10ce758b484aa3.gif)](https://gyazo.com/006e02cb3e8259d5dc10ce758b484aa3)
 上からNew Songs、New Artists、New MusicVideoを新着順で左から表示しております。
 
+## トップページ(フリーワード検索)
+[![Image from Gyazo](https://i.gyazo.com/c5dd79164bb0bc2bf43f2d5f1576dca9.gif)](https://gyazo.com/c5dd79164bb0bc2bf43f2d5f1576dca9)
+検索したいワードを入力し、searchボタンをクリックするとそのワードが入っているアーティストが検索結果として表示されます。
+また「test guiter」のように文字と文字の間に半角スペース空けることで複数のワードで検索する事が出来ます。
+
+## トップページ(ジャンル検索)
+[![Image from Gyazo](https://i.gyazo.com/d6d0e4adaf8cec4ef4f0d39a9b6f3163.gif)](https://gyazo.com/d6d0e4adaf8cec4ef4f0d39a9b6f3163)
+検索したいジャンルをクリックするとそのジャンルで登録されているアーティストが表示されます。
+
+## トップページ(地域検索)
+[![Image from Gyazo](https://i.gyazo.com/0ea238ce1d34d112b3fdd4594a32e464.gif)](https://gyazo.com/0ea238ce1d34d112b3fdd4594a32e464)
+検索したい地域をクリックするとその地域で登録されているアーティストが表示されます。
+
+
 # DB設計
 ## artistsテーブル
 | Column              | Type        | Options                   |
