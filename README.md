@@ -117,12 +117,6 @@ CSS , JavaScript , Ajax
 ## データベース
 MySQL , SequelPro
 
-## インフラ
-
-## Webサーバー(本番環境)
-
-## アプリケーションサーバー(本番環境)
-
 ## ソース管理
 GitHub , GitHub Desktop
 
@@ -134,6 +128,7 @@ VSCode
 
 # 課題や今後実装したい機能
 ・アーティスト詳細ページや楽曲、MV詳細ページのQRコード作成機能
+・テストコード
 
 # DB設計
 ## artistsテーブル
