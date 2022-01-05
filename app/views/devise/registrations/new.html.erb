@@ -38,7 +38,7 @@
         
         <div class="field">
           <%= f.label :info, "プロフィール" %><br />
-          <%= f.text_area :info, class: :form__text, id:"artist_info", placeholder:" プロフィールを入力してください" %>
+          <%= f.text_area :info, class: :form__text, id:"artist_info", maxlength: "250",placeholder:" 250文字以内でプロフィールを入力してください" %>
         </div>
 
         <div class="field">
