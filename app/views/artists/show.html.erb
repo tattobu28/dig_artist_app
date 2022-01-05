@@ -26,11 +26,13 @@
           </tr>
           <tr>
             <th class="table__col1">活動拠点</th>
-            <td class="table__col2"><%= @artist.city.name %></td>
+            <td class="table__col3">
+            <%= link_to @artist.city.name, "/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=#{@artist.city_id}&commit=検索" %></td>
           </tr>
           <tr>
             <th class="table__col1">ジャンル</th>
-            <td class="table__col2"><%= @artist.genre.name %></td>
+            <td class="table__col3">
+            <%= link_to @artist.genre.name, "/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=#{@artist.genre_id}&commit=検索" %></td>
           </tr>
         <% if @artist.website.present? %>
           <tr>
