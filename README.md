@@ -54,9 +54,15 @@ URL:
 必須項目を入力し、新規登録ボタンをクリックするとアーティスト登録が出来ます。
 
 ## アーティスト詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/944ad91f4d7854f09397d4bd30e5de51.gif)](https://gyazo.com/944ad91f4d7854f09397d4bd30e5de51)
 
+登録されている情報やアーティストがアップロードした楽曲とMVを閲覧でき、ページのシェアをする事が出来ます。
 
 ## アーティスト編集、削除ページ
+[![Image from Gyazo](https://i.gyazo.com/c95bc6eea2c23c5c3624c904d5906850.gif)](https://gyazo.com/c95bc6eea2c23c5c3624c904d5906850)
+
+編集したい項目を入力し、登録しているパスワードを入力すると編集する事が出来ます。
+また削除したい場合は、「削除する」ボタンをクリックすることで完全に削除する事が出来ます。
 
 ## 楽曲アップロードページ
 [![Image from Gyazo](https://i.gyazo.com/1cafd5ebf6089fea7a1c3a141951eaf3.gif)](https://gyazo.com/1cafd5ebf6089fea7a1c3a141951eaf3)
@@ -69,18 +75,30 @@ URL:
 楽曲を視聴、ダウンロード、シェアする事が出来ます。
 入力された項目が表示され、任意の項目は入力されていなければ表示されません。
 アップロードしたアーティストであれば編集、削除ボタンが表示されます。
+「削除する」ボタンをクリックすると削除する事が出来ます。
 
-## 楽曲編集、削除ページ
+## 楽曲編集ページ
 [![Image from Gyazo](https://i.gyazo.com/4c2b9a2f70490e5773d97c0179035e8b.gif)](https://gyazo.com/4c2b9a2f70490e5773d97c0179035e8b)
 
 編集したい項目を入力し「保存する」ボタンをクリックすると編集した情報が保存できます。
 
 ## MVアップロードページ
+[![Image from Gyazo](https://i.gyazo.com/b598dacac78cf51deb9b80b12dc34cc6.gif)](https://gyazo.com/b598dacac78cf51deb9b80b12dc34cc6)
+
+必須項目を入力し「保存する」ボタンをクリックするとMVを登録する事が出来ます。
 
 ## MV詳細ページ 
+[![Image from Gyazo](https://i.gyazo.com/d4adb65dbc22a21084ba5b67a88396bb.gif)](https://gyazo.com/d4adb65dbc22a21084ba5b67a88396bb)
 
-## MV編集、削除ページ
+MVを視聴、シェアする事が出来ます。
+入力された項目が表示され、任意の項目は入力されていなければ表示されません。
+アップロードしたアーティストであれば編集、削除ボタンが表示されます。
+「削除する」ボタンをクリックすると削除する事が出来ます。
 
+## MV編集ページ
+[![Image from Gyazo](https://i.gyazo.com/4f1b0b6ffa31538e1d21fd1d63cea522.gif)](https://gyazo.com/4f1b0b6ffa31538e1d21fd1d63cea522)
+
+編集したい項目を入力し「保存する」ボタンをクリックすると編集した情報が保存できます。
 
 # 工夫したポイント
 
