@@ -653,6 +653,7 @@ a {
   height: 270px;
   width: 480px;
 }
+
 /* 検索ページ */
 .search__card{
   width: calc((100% - 50px) / 4);
