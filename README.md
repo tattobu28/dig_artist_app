@@ -8,7 +8,7 @@ DIG ARTIST
 アーティストはフリーワードやジャンル、地域で検索することが出来る。
 
 # 本番環境
-URL:
+URL:https://dig-artist.herokuapp.com/
 
 ログイン情報(テスト用)
 ・Eメール  test@email.com
