@@ -1,6 +1,6 @@
 class YoutubesController < ApplicationController
   before_action :set_youtube, only: [:edit, :show, :update, :destroy]
-  before_action :authenticate_artist!, except: [:show, :index, :ranking]
+  before_action :authenticate_artist!, except: [:show, :ranking]
 
   def new
     @youtube = Youtube.new
