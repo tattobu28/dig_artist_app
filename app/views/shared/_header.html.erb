@@ -8,7 +8,6 @@
       <%= link_to "お知らせ", root_path, class: :navigation__btn %>
       <p id="ranking" class="navigation__btn"> ランキング</p>
     </div>
-    <%# ログインしているときは以下を表示するようにしましょう %>
     <% if artist_signed_in? %>
       <div class="nav__right">
         <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
@@ -16,8 +15,6 @@
         <%= link_to "楽曲アップロード", new_song_path, class: :song_up__btn %>
         <%= link_to "MVアップロード", new_youtube_path, class: :song_up__btn %>
       </div>
-    <%# // ログインしているときは上記を表示するようにしましょう %>
-    <%# ログインしていないときは以下を表示するようにしましょう %>
     <% else %>
       <div class="nav__right">
         <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
@@ -25,7 +22,6 @@
         <%= link_to "新規登録", new_artist_registration_path, class: :nav__btn %>
       </div>
     <% end %>
-    <%# // ログインしていないときは上記を表示するようにしましょう %>
     <div class="artistSearchBox hidden" id="pull-down">
       <div class="artistSearchBox_inner">
         <p class="ttl_artistSearch">アーティスト検索</p>
