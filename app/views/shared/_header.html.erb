@@ -1,295 +1,295 @@
 <header class="header">
-    <div class="nav">
-      <div class="nav__left">
-        <%= link_to image_tag("logo1.png", class: :logo), root_path %>
+  <div class="nav">
+    <div class="nav__left">
+      <%= link_to image_tag("logo1.png", class: :logo), root_path %>
+    </div>
+    <div class="nav__center">
+      <%= link_to "DIG ARTISTについて", root_path, class: :navigation__btn %>
+      <%= link_to "お知らせ", root_path, class: :navigation__btn %>
+      <p id="ranking" class="navigation__btn"> ランキング</p>
+    </div>
+    <%# ログインしているときは以下を表示するようにしましょう %>
+    <% if artist_signed_in? %>
+      <div class="nav__right">
+        <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
+        <%= link_to "ログアウト", destroy_artist_session_path, method: :delete, class: :nav__logout %>
+        <%= link_to "楽曲アップロード", new_song_path, class: :song_up__btn %>
+        <%= link_to "MVアップロード", new_youtube_path, class: :song_up__btn %>
       </div>
-      <div class="nav__center">
-        <%= link_to "DIG ARTISTについて", root_path, class: :navigation__btn %>
-        <%= link_to "お知らせ", root_path, class: :navigation__btn %>
-        <p id="ranking" class="navigation__btn"> ランキング</p>
+    <%# // ログインしているときは上記を表示するようにしましょう %>
+    <%# ログインしていないときは以下を表示するようにしましょう %>
+    <% else %>
+      <div class="nav__right">
+        <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
+        <%= link_to "ログイン", new_artist_session_path, class: :nav__btn %>
+        <%= link_to "新規登録", new_artist_registration_path, class: :nav__btn %>
       </div>
-      <%# ログインしているときは以下を表示するようにしましょう %>
-      <% if artist_signed_in? %>
-        <div class="nav__right">
-          <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
-          <%= link_to "ログアウト", destroy_artist_session_path, method: :delete, class: :nav__logout %>
-          <%= link_to "楽曲アップロード", new_song_path, class: :song_up__btn %>
-          <%= link_to "MVアップロード", new_youtube_path, class: :song_up__btn %>
-        </div>
-      <%# // ログインしているときは上記を表示するようにしましょう %>
-      <%# ログインしていないときは以下を表示するようにしましょう %>
-      <% else %>
-        <div class="nav__right">
-          <%= image_tag("searchアイコン.png", id: "search",class: :search__btn) %>
-          <%= link_to "ログイン", new_artist_session_path, class: :nav__btn %>
-          <%= link_to "新規登録", new_artist_registration_path, class: :nav__btn %>
-        </div>
-      <% end %>
-      <%# // ログインしていないときは上記を表示するようにしましょう %>
-      <div class="artistSearchBox hidden" id="pull-down">
-        <div class="artistSearchBox_inner">
-          <p class="ttl_artistSearch">アーティスト検索</p>
-          <div class="artistSearch_keyword">
-            <p>フリーワードで探す</p>
-              <%= search_form_for Artist.ransack(params[:q]), url: search_artists_path, html: {class: "search-form"} do |f| %>
-                <%= f.text_field :name, placeholder: 'アーティスト名を入力', class: 'js-artistSearch' %>
-                <%= f.label :submit, class: "artistSearchBtn" do %>
-                  <%= f.submit :search, class: "js-artistSearchButton" %>
-                <% end %>
+    <% end %>
+    <%# // ログインしていないときは上記を表示するようにしましょう %>
+    <div class="artistSearchBox hidden" id="pull-down">
+      <div class="artistSearchBox_inner">
+        <p class="ttl_artistSearch">アーティスト検索</p>
+        <div class="artistSearch_keyword">
+          <p>フリーワードで探す</p>
+            <%= search_form_for Artist.ransack(params[:q]), url: search_artists_path, html: {class: "search-form"} do |f| %>
+              <%= f.text_field :name, placeholder: 'アーティスト名を入力', class: 'js-artistSearch' %>
+              <%= f.label :submit, class: "artistSearchBtn" do %>
+                <%= f.submit :search, class: "js-artistSearchButton" %>
               <% end %>
-          </div>
-          <div class="artistSearch_select">
-            <ul class="artistSearch_tabs">
-              <li class="active">
-                <span class="artistSearch_genre" id="search-genre">ジャンルから探す</span>
+            <% end %>
+        </div>
+        <div class="artistSearch_select">
+          <ul class="artistSearch_tabs">
+            <li class="active">
+              <span class="artistSearch_genre" id="search-genre">ジャンルから探す</span>
+            </li>
+            <li class>
+            <span class="artistSearch_area" id="search-area">地域から探す</span>
+            </li>
+          </ul>
+          <div class="artistSearch__genre hidden" id="genre-lists">
+            <ul >
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=2&commit=検索">ポップ</a>
               </li>
-              <li class>
-              <span class="artistSearch_area" id="search-area">地域から探す</span>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=3&commit=検索">シンガーソングライター</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=4&commit=検索">ロック</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=5&commit=検索">パンク・メロコア・ハードコア</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=6&commit=検索">オルタナティブ</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=7&commit=検索">ギターロック</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=8&commit=検索">ハードロック・ヘビーメタル</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=9&commit=検索">ミクスチャー</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=10&commit=検索">ダンス・エレクトロ</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=11&commit=検索">ヒップホップ・ラップ</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=12&commit=検索">ジャズ</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=13&commit=検索">R&B</a>
+              </li>
+              <li>
+                <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=14&commit=検索">レゲエ</a>
               </li>
             </ul>
-            <div class="artistSearch__genre hidden" id="genre-lists">
-              <ul >
+          </div>
+          <div class="artistSearch__area hidden" id="area-lists">
+            <div class="artistSearch_areaBox">
+              <div class="artistSearch_areaName" id="areaHokkaido">
+                北海道・東北
+              </div>
+              <ul id="areaH">
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=2&commit=検索">ポップ</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=1&commit=検索">北海道</a>
                 </li>
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=3&commit=検索">シンガーソングライター</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=2&commit=検索">青森県</a>
                 </li>
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=4&commit=検索">ロック</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=3&commit=検索">岩手県</a>
                 </li>
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=5&commit=検索">パンク・メロコア・ハードコア</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=4&commit=検索">宮城県</a>
                 </li>
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=6&commit=検索">オルタナティブ</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=5&commit=検索">秋田県</a>
                 </li>
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=7&commit=検索">ギターロック</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=6&commit=検索">山形県</a>
                 </li>
                 <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=8&commit=検索">ハードロック・ヘビーメタル</a>
-                </li>
-                <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=9&commit=検索">ミクスチャー</a>
-                </li>
-                <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=10&commit=検索">ダンス・エレクトロ</a>
-                </li>
-                <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=11&commit=検索">ヒップホップ・ラップ</a>
-                </li>
-                <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=12&commit=検索">ジャズ</a>
-                </li>
-                <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=13&commit=検索">R&B</a>
-                </li>
-                <li>
-                  <a href="/artists/search?q%5Bgenre_id_in%5D%5B%5D=&q%5Bgenre_id_in%5D%5B%5D=14&commit=検索">レゲエ</a>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=7&commit=検索">福島県</a>
                 </li>
               </ul>
             </div>
-            <div class="artistSearch__area hidden" id="area-lists">
-              <div class="artistSearch_areaBox">
-                <div class="artistSearch_areaName" id="areaHokkaido">
-                  北海道・東北
-                </div>
-                <ul id="areaH">
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=1&commit=検索">北海道</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=2&commit=検索">青森県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=3&commit=検索">岩手県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=4&commit=検索">宮城県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=5&commit=検索">秋田県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=6&commit=検索">山形県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=7&commit=検索">福島県</a>
-                  </li>
-                </ul>
+            <div class="artistSearch_areaBox">
+              <div class="artistSearch_areaName" id="areaKanto">
+                関東
               </div>
-              <div class="artistSearch_areaBox">
-                <div class="artistSearch_areaName" id="areaKanto">
-                  関東
-                </div>
-                <ul id="areaK">
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=8&commit=検索">茨城県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=9&commit=検索">栃木県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=10&commit=検索">群馬県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=11&commit=検索">埼玉県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=12&commit=検索">千葉県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=13&commit=検索">東京都</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=14&commit=検索">神奈川県</a>
-                  </li>
-                </ul>
+              <ul id="areaK">
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=8&commit=検索">茨城県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=9&commit=検索">栃木県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=10&commit=検索">群馬県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=11&commit=検索">埼玉県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=12&commit=検索">千葉県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=13&commit=検索">東京都</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=14&commit=検索">神奈川県</a>
+                </li>
+              </ul>
+            </div>
+            <div class="artistSearch_areaBox">
+              <div class="artistSearch_areaName" id="areaCyubu">
+                中部
               </div>
-              <div class="artistSearch_areaBox">
-                <div class="artistSearch_areaName" id="areaCyubu">
-                  中部
-                </div>
-                <ul id="areaC">
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=15&commit=検索">新潟県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=16&commit=検索">富山県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=17&commit=検索">石川県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=18&commit=検索">福井県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=19&commit=検索">山梨県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=20&commit=検索">長野県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=21&commit=検索">岐阜県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=22&commit=検索">静岡県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=23&commit=検索">愛知県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=24&commit=検索">三重県</a>
-                  </li>
-                </ul>
+              <ul id="areaC">
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=15&commit=検索">新潟県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=16&commit=検索">富山県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=17&commit=検索">石川県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=18&commit=検索">福井県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=19&commit=検索">山梨県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=20&commit=検索">長野県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=21&commit=検索">岐阜県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=22&commit=検索">静岡県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=23&commit=検索">愛知県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=24&commit=検索">三重県</a>
+                </li>
+              </ul>
+            </div>
+            <div class="artistSearch_areaBox">
+              <div class="artistSearch_areaName" id="areaKansai">
+                関西
               </div>
-              <div class="artistSearch_areaBox">
-                <div class="artistSearch_areaName" id="areaKansai">
-                  関西
-                </div>
-                <ul id="areaS">
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=25&commit=検索">滋賀県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=26&commit=検索">京都府</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=27&commit=検索">大阪府</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=28&commit=検索">兵庫県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=29&commit=検索">奈良県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=30&commit=検索">和歌山県</a>
-                  </li>
-                </ul>
+              <ul id="areaS">
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=25&commit=検索">滋賀県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=26&commit=検索">京都府</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=27&commit=検索">大阪府</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=28&commit=検索">兵庫県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=29&commit=検索">奈良県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=30&commit=検索">和歌山県</a>
+                </li>
+              </ul>
+            </div>
+            <div class="artistSearch_areaBox">
+              <div class="artistSearch_areaName" id="areaShikoku">
+                中国・四国
               </div>
-              <div class="artistSearch_areaBox">
-                <div class="artistSearch_areaName" id="areaShikoku">
-                  中国・四国
-                </div>
-                <ul id="areaSk">
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=31&commit=検索">鳥取県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=32&commit=検索">島根県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=33&commit=検索">岡山県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=34&commit=検索">広島県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=35&commit=検索">山口県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=36&commit=検索">徳島県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=37&commit=検索">香川県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=38&commit=検索">愛媛県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=39&commit=検索">高知県</a>
-                  </li>
-                </ul>
+              <ul id="areaSk">
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=31&commit=検索">鳥取県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=32&commit=検索">島根県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=33&commit=検索">岡山県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=34&commit=検索">広島県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=35&commit=検索">山口県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=36&commit=検索">徳島県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=37&commit=検索">香川県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=38&commit=検索">愛媛県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=39&commit=検索">高知県</a>
+                </li>
+              </ul>
+            </div>
+            <div class="artistSearch_areaBox">
+              <div class="artistSearch_areaName" id="areaOkinawa">
+                九州・沖縄
               </div>
-              <div class="artistSearch_areaBox">
-                <div class="artistSearch_areaName" id="areaOkinawa">
-                  九州・沖縄
-                </div>
-                <ul id="areaO">
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=40&commit=検索">福岡県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=41&commit=検索">佐賀県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=42&commit=検索">長崎県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=43&commit=検索">熊本県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=44&commit=検索">大分県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=45&commit=検索">宮城県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=46&commit=検索">鹿児島県</a>
-                  </li>
-                  <li>
-                    <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=47&commit=検索">沖縄県</a>
-                  </li>
-                </ul>
-              </div>
+              <ul id="areaO">
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=40&commit=検索">福岡県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=41&commit=検索">佐賀県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=42&commit=検索">長崎県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=43&commit=検索">熊本県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=44&commit=検索">大分県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=45&commit=検索">宮城県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=46&commit=検索">鹿児島県</a>
+                </li>
+                <li>
+                  <a href="/artists/search?q%5Bcity_id_in%5D%5B%5D=&q%5Bcity_id_in%5D%5B%5D=47&commit=検索">沖縄県</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-        <div id="modal" class="modal">
-        </div>
-      <ul id="ranking_menu" class="ranking_menu hidden">
-        <li>
-          <%= link_to "アーティスト", ranking_artists_path, class: :ranking_menu_title %>
-        </li>
-        <li>
-          <%= link_to "楽曲", ranking_songs_path, class: :ranking_menu_title %>
-        </li>
-        <li>
-          <%= link_to "MV", ranking_youtubes_path, class: :ranking_menu_title %>
-        </li>
-      </ul>
     </div>
+      <div id="modal" class="modal">
+      </div>
+    <ul id="ranking_menu" class="ranking_menu hidden">
+      <li>
+        <%= link_to "アーティスト", ranking_artists_path, class: :ranking_menu_title %>
+      </li>
+      <li>
+        <%= link_to "楽曲", ranking_songs_path, class: :ranking_menu_title %>
+      </li>
+      <li>
+        <%= link_to "MV", ranking_youtubes_path, class: :ranking_menu_title %>
+      </li>
+    </ul>
+  </div>
 </header>
