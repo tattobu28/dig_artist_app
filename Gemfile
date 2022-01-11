@@ -67,3 +67,4 @@ gem 'carrierwave'
 gem 'audiojs-rails'
 gem 'ransack'
 gem 'impressionist'
+gem "aws-sdk-s3", require: false
