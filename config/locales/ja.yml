@@ -16,3 +16,7 @@ ja:
         composer: 作曲者
         image: アルバムアートワーク
         file: 楽曲ファイル
+      youtube:
+        title: タイトル
+        composer: 作曲者
+        url: YouTube URL
