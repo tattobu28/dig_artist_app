@@ -10,6 +10,7 @@ ja:
         member: メンバー
         city_id: 活動拠点
         genre_id: ジャンル
+        info: プロフィール
       song:
         title: タイトル
         composer: 作曲者

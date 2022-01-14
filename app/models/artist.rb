@@ -17,4 +17,5 @@ class Artist < ApplicationRecord
   validates :city_id,   presence: true, numericality: { other_than: 0, message: 'を入力してください' }
   validates :genre_id,  presence: true, numericality: { other_than: 1, message: 'を入力してください' }
   validates :image,     presence: true
+  validates :info,      length: {maximum: 250}
 end
