@@ -8,6 +8,5 @@ FactoryBot.define do
     lyric                 { 'test' }
 
     association :artist
-    
   end
 end
