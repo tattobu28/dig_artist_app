@@ -5,8 +5,7 @@ FactoryBot.define do
     writer                { 'test' }
     composer              { 'test' }
     lyric                 { 'test' }
-    file                  {Rack::Test::UploadedFile.new(File.join(Rails.root, 'public/songs/SS.m4a'))}
-
+    file                  { Rack::Test::UploadedFile.new(File.join(Rails.root, 'public/songs/SS.m4a')) }
 
     association :artist
 

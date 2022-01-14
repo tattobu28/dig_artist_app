@@ -14,22 +14,22 @@ RSpec.describe Song, type: :model do
       it 'titleが空ではアップロードできない' do
         @song.title = ''
         @song.valid?
-        expect(@song.errors.full_messages).to include("タイトルを入力してください")
+        expect(@song.errors.full_messages).to include('タイトルを入力してください')
       end
       it 'composerが空ではアップロードできない' do
         @song.composer = ''
         @song.valid?
-        expect(@song.errors.full_messages).to include("作曲者を入力してください")
+        expect(@song.errors.full_messages).to include('作曲者を入力してください')
       end
       it 'imageが空ではアップロードできない' do
         @song.image = nil
         @song.valid?
-        expect(@song.errors.full_messages).to include("アルバムアートワークを入力してください")
+        expect(@song.errors.full_messages).to include('アルバムアートワークを入力してください')
       end
       it 'fileが空ではアップロードできない' do
         @song.file = nil
         @song.valid?
-        expect(@song.errors.full_messages).to include("楽曲ファイルを入力してください")
+        expect(@song.errors.full_messages).to include('楽曲ファイルを入力してください')
       end
     end
   end
