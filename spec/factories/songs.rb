@@ -10,7 +10,7 @@ FactoryBot.define do
     association :artist
 
     after(:build) do |song|
-      song.image.attach(io: File.open('public/images/bandsample.jpg'), filename: 'bandsample.jpg')
+      song.image.attach(io: File.open('public/images/songsample.jpg'), filename: 'songsample.jpg')
     end
   end
 end

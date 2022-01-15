@@ -16,8 +16,8 @@ describe SongsController, type: :request do
       expect(response.body).to include(@song.title)
     end
     it 'indexアクションにリクエストするとレスポンスにアップロード済みの楽曲の画像が存在する' do
-      # get root_path
-      # expect(action.body).to include(url_for(@song.image.variant(resize: '500x500')))
+      get root_path
+      expect(response.body).to include('songsample.jpg')
     end
     it 'indexアクションにリクエストするとレスポンスにアップロード済みの楽曲のアーティスト名が存在する' do
       get root_path
@@ -36,8 +36,8 @@ describe SongsController, type: :request do
       expect(response.body).to include(@artist.city.name)
     end
     it 'indexアクションにリクエストするとレスポンスに登録済みのアーティストの画像が存在する' do
-      # get root_path
-      # expect(response.body).to include(@artist.image)
+      get root_path
+      expect(response.body).to include('bandsample.jpg')
     end
     it 'indexアクションにリクエストするとレスポンスにアップロード済みのMVのurlが存在する' do
       get root_path
@@ -79,4 +79,58 @@ describe SongsController, type: :request do
       end
     end
   end
+  describe 'GET #show' do
+    it 'showアクションにリクエストすると正常にレスポンスが返ってくる' do 
+      get song_path(@song)
+      expect(response.status).to eq 200
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のタイトルが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.title)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲の画像が存在する' do 
+      get song_path(@song)
+      expect(response.body).to include('songsample.jpg')
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のfileが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include('SS.m4a')
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のinfoが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.info)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のcomposerが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.composer)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のwriterが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.writer)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のlyricが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.lyric)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のアーティスト名が存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.artist.name)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のアーティスト名が存在する' do 
+      get song_path(@song)
+      expect(response.body).to include(@song.artist.name)
+    end
+    it 'showアクションにリクエストするとレスポンスにアップロード済みの楽曲のアーティストの画像が存在する' do 
+      get song_path(@song)
+      expect(response.body).to include('bandsample.jpg')
+    end
+    it 'showアクションにリクエストするとレスポンスにtwitterのボタンが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include('twitterアイコン')
+    end
+    it 'showアクションにリクエストするとレスポンスにfacebookのボタンが存在する' do 
+      get song_path(@song)
+      expect(response.body).to include('facebookアイコン')
+    end
+  end 
 end
