@@ -57,7 +57,7 @@ URL: https://dig-artist.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/944ad91f4d7854f09397d4bd30e5de51.gif)](https://gyazo.com/944ad91f4d7854f09397d4bd30e5de51)
 
 登録されている情報やアーティストがアップロードした楽曲とMVを閲覧でき、ページのシェアをする事が出来ます。
-任意の項目は入力されていなければ表示されません。 同じ登録したアーティストであれば編集、ボタンが表示されます。
+任意の項目は入力されていなければ表示されません。 同じ登録したアーティストであれば編集、ボタンが表示されます。WebsiteやTwitterアカウント、Instagramアカウントが登録されていれば各ページに遷移できます。
 
 ## アーティスト編集、削除ページ
 [![Image from Gyazo](https://i.gyazo.com/c95bc6eea2c23c5c3624c904d5906850.gif)](https://gyazo.com/c95bc6eea2c23c5c3624c904d5906850)
