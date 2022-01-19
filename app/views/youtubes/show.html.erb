@@ -3,7 +3,8 @@
   <div class="inner">
     <div class="prototype__wrapper">
       <div class="music__video">
-        <iframe class="video" src="https://www.youtube.com/embed/<%= @youtube.url.last(11)%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  >
+        <iframe class="video" src="https://www.youtube.com/embed/<%= @youtube.url.last(11)%>"
+         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  >
         </iframe>
       </div>
       <% if artist_signed_in? && current_artist.id == @youtube.artist_id %>
