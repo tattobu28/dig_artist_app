@@ -5,7 +5,7 @@
     </div>
     <div class="nav__center">
       <%= link_to "DIG ARTISTについて", songs_about_path, class: :navigation__btn %>
-      <%= link_to "お知らせ", root_path, class: :navigation__btn %>
+      <%= link_to "お知らせ", songs_news_path, class: :navigation__btn %>
       <p id="ranking" class="navigation__btn"> ランキング</p>
     </div>
     <% if artist_signed_in? %>
