@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: "artists/registrations"
   }
   get 'artists/:id/profile', to: 'artists#show', as: 'artist_profile'
-  get 'songs/index'
+  get 'songs/about'
   root to: "songs#index"
   resources :songs do
     collection do

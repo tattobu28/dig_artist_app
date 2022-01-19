@@ -45,6 +45,9 @@ class SongsController < ApplicationController
     @songs = Song.order(impressions_count: 'DESC')
   end
 
+  def about
+  end
+
   private
 
   def song_params
