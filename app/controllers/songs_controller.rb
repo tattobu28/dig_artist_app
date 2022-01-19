@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:edit, :show, :update, :destroy]
-  before_action :authenticate_artist!, except: [:show, :index, :ranking]
+  before_action :authenticate_artist!, except: [:show, :index, :ranking, :about]
 
   def index
     @songs = Song.order('id DESC').limit(4)
